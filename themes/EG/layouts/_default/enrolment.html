@@ -1,0 +1,119 @@
+{{ define "main" }}
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+        <h1 class="mt-4 mb-1 text-4xl font-bold">Enrolment</h1>
+        <p class="text-sm antialiased text-gray-600 font-light"><a href="https://enrolment.cheltladiescollege.org" target="_blank">enrolment.cheltladiescollege.org</a></p>
+    </div>
+    <div class="antialiased leading-normal">
+        <p class="my-4">
+            Starting at a new school requires collection and distribution of large amounts of information, to facilitate this
+            process the enrolment portal allows prospective parents access to simple secure area where they can provide required
+            details and are guided through the process.
+        </p>
+
+        <p class="my-4">
+            The system generates reports for the various internal departments providing only the relevant details to those administrators that require access.
+        </p>
+
+        <div class="my-8 grid grid-cols-4 gap-0 leading-normal">
+            <div class="font-semibold">Statistics</div>
+            <div class="font-light text-right col-span-3">
+                2018 Launch<br />
+                <span class="italic text-xs text-gray-600">c.</span>1,650 visitors per day<br />
+                A+ <a href="https://observatory.mozilla.org/" target="_blank">observatory.mozilla.org</a><br />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $image1_avif := resources.Get "/images/enrolment/iPhone.avif" | fingerprint }}
+        {{ $image1_webp := resources.Get "/images/enrolment/iPhone.webp" | fingerprint }}
+        {{ $image1 := resources.Get "/images/enrolment/iPhone.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $image1_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $image1_webp.RelPermalink }}">
+        <img src="{{ $image1.RelPermalink }}" alt="Home Crest" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $image2_avif := resources.Get "/images/enrolment/Browser.avif" | fingerprint }}
+        {{ $image2_webp := resources.Get "/images/enrolment/Browser.webp" | fingerprint }}
+        {{ $image2 := resources.Get "/images/enrolment/Browser.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $image2_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $image2_webp.RelPermalink }}">
+        <img src="{{ $image2.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $image3_avif := resources.Get "/images/enrolment/iPad.avif" | fingerprint }}
+        {{ $image3_webp := resources.Get "/images/enrolment/iPad.webp" | fingerprint }}
+        {{ $image3 := resources.Get "/images/enrolment/iPad.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $image3_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $image3_webp.RelPermalink }}">
+        <img src="{{ $image3.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $image4_avif := resources.Get "/images/enrolment/iPhone2.avif" | fingerprint }}
+        {{ $image4_webp := resources.Get "/images/enrolment/iPhone2.webp" | fingerprint }}
+        {{ $image4 := resources.Get "/images/enrolment/iPhone2.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $image4_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $image4_webp.RelPermalink }}">
+        <img src="{{ $image4.RelPermalink }}" alt="Device Mockup iPad" class="object-cover w-full h-full">
+    </picture>
+</div>
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="antialiased leading-normal my-8">
+        <p class="mb-4">
+            Built on the Laravel framework and served using AWS EC2 instances, the project runs in annual cycles to collect the newly enroled parents details.
+        </p>
+        
+        <p class="mb-4">
+            Each cycle amends to the various forms are made, the system was designed not to be edited by the admissions department to ensure a consistent approach to the forms, and reliability. 
+        </p>
+
+        <p class="mb-4">
+            Due to the sensitivity of the data being inputed into the system the system encrypts all data end to end and access to the data is then controlled by LDAP security groups managed by the IT Support team.
+        </p>
+
+        <p class="mb-4">
+            The data can then be exported by the various data manager in a format that is compatible with the College management information system (iSams)
+        </p>
+
+        <p class="mb-4">
+            The data can also be automaticlly imported into iSams using a REST API, but the admissions staff are more comfortable inspecting the data and manually importing.
+        </p>
+
+    </div>
+    <div>
+        <div class="my-8 grid grid-cols-2 gap-0">
+            <div class="font-semibold">Stack</div>
+            <div class="font-light">
+                <a href="https://github.com" target="_blank">Github</a><br />
+                <a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2</a><br />
+                <a href="https://aws.amazon.com/rds/" target="_blank">Amazon RDS</a><br />
+                <a href="https://aws.amazon.com/sns/" target="_blank">Amazon SNS</a><br />&nbsp;
+            </div>
+            <div class="font-semibold">Libraries & Technologies</div>
+            <div class="font-light">
+                <a href="http://laravel.com/" target="_blank">Laravel</a><br />
+                <a href="https://sass-lang.com" target="_blank">Sass</a><br />&nbsp;
+            </div>
+            <div class="font-semibold">Integrations</div>
+            <div class="font-light">
+                <a href="https://www.isams.com" target="_blank">iSams</a><br />&nbsp;
+            </div>
+        </div>
+    </div>
+</div>
+
+{{- partial "footer.html" . -}}
+{{ end }}

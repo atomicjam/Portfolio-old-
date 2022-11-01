@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+{{- partial "head.html" . -}}
+<body class="font-sans m-8">
+    {{- partial "menu.html" . -}}
+    {{- block "main" . }}{{- end }}
+    {{- partial "scripts.html" . -}}
+</body>
+</html>

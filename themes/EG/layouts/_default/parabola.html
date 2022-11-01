@@ -1,0 +1,115 @@
+{{ define "main" }}
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+        <h1 class="mt-4 mb-1 text-4xl font-bold">Parabola Arts</h1>
+        <p class="text-sm antialiased text-gray-600 font-light"><a href="https://parabolaarts.cheltladiescollege.org"
+                target="_blank">parabolaarts.cheltladiescollege.org</a></p>
+    </div>
+    <div class="antialiased leading-normal">
+        <p class="my-4">
+            Co-Brand microsite for The Cheltenham Ladies' College revolving around the theatre and arts centre in the centre of Cheltenham.
+        </p>
+        
+        <p class="my-4">
+            The site allowed visitors to book tickets for upcoming events using an integration with spetrix booking and ticketing system, allowing visitors to choose their seat and see a view from that location before buying a ticket.
+        </p>
+
+        <div class="my-8 grid grid-cols-4 gap-0 leading-normal">
+            <div class="font-semibold">Statistics</div>
+            <div class="font-light text-right col-span-3">
+                2017 Launch <br />
+                A+ <a href="https://observatory.mozilla.org/" target="_blank">observatory.mozilla.org</a><br />
+                100/100/100/100 <a href="https://web.dev/measure/" target="_blank">PageSpeed Insights</a><br />
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $clclogo_avif := resources.Get "/images/parabola/parabola-logo.avif" | fingerprint }}
+        {{ $clclogo_webp := resources.Get "/images/parabola/parabola-logo.webp" | fingerprint }}
+        {{ $clclogo := resources.Get "/images/parabola/parabola-logo.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $clclogo_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $clclogo_webp.RelPermalink }}">
+        <img src="{{ $clclogo.RelPermalink }}" alt="CLC Crest" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $clcphones_avif := resources.Get "/images/parabola/parabola-browser.avif" | fingerprint }}
+        {{ $clcphones_webp := resources.Get "/images/parabola/parabola-browser.webp" | fingerprint }}
+        {{ $clcphones := resources.Get "/images/parabola/parabola-browser.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $clcphones_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $clcphones_webp.RelPermalink }}">
+        <img src="{{ $clcphones.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
+    </picture>
+
+</div>
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="antialiased leading-normal my-8">
+        <p class="mb-4">
+            Created as a traditional LAMP stack project, the site is built on a foundation of <a
+                href="http://silverstripe.org/" target="_blank">Silverstripe CMS</a> with custom page templates, the site extended the existing Cheltenham Ladies' College site adding additional page templates.
+        </p>
+        <p class="my-4">
+            Page templates allow the venues team the ability to create content with no technical
+            experience, events created automatically populated the ticketing system so visitors could purchase tickets via the website.
+        </p>
+        <p class="my-4">
+            The website also allowed visitors to check in for events on the day and provided access to an e-ticket.
+        </p>
+        <p class="my-4">
+            Initially locally hosted at the College, the project was migrated to AWS for improved resilience and scale.
+            AWS additions included edge caching to improve the experience for overseas users with AWS Cloudfront,
+            alongside security enhancements from AWS Shield.
+        </p>
+        <p class="my-4">
+            Progressive enhancements to the site have been added over the life of the project improving accessability
+            support, service workers as well as new functionality to enhance user engagement with the addition of
+            pop-out notices.
+        </p>
+    </div>
+    <div>
+        <div class="my-8 grid grid-cols-2 gap-0">
+            <div class="font-semibold">Stack</div>
+            <div class="font-light">
+                <a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2 Linux</a><br />
+                <a href="https://nginx.org" target="_blank">Nginx</a><br />
+                <a href="https://www.php.net" target="_blank">PHP</a><br />
+                <a href="https://www.silverstripe.org" target="_blank">Silverstripe CMS</a><br />
+                <a href="https://aws.amazon.com/rds/" target="_blank">Amazon RDS (mySQL)</a><br />&nbsp;
+            </div>
+            <div class="font-semibold">Libraries & Technologies</div>
+            <div class="font-light">
+                HTML5<br />
+                CSS - SASS<br />
+                Custom Javascript<br />&nbsp;</div>
+            <div class="font-semibold">Integrations</div>
+            <div class="font-light">
+                <a href="https://www.spektrix.com/en-gb/" target="_blank">Spektrix</a><br />&nbsp;
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $clcphones_avif := resources.Get "/images/parabola/parabola-seat.avif" | fingerprint }}
+        {{ $clcphones_webp := resources.Get "/images/parabola/parabola-seat.webp" | fingerprint }}
+        {{ $clcphones := resources.Get "/images/parabola/parabola-seat.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $clcphones_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $clcphones_webp.RelPermalink }}">
+        <img src="{{ $clcphones.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
+    </picture>
+</div>
+
+{{- partial "footer.html" . -}}
+{{ end }}

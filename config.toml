@@ -1,0 +1,17 @@
+baseURL = 'https://www.elliotgoode.co.uk'
+languageCode = 'en-gb'
+title = 'Home » Elliot Goode'
+theme = 'EG'
+enableRobotsTXT = true
+disableHugoGeneratorInject = true
+[taxonomies]
+
+
+[server]
+[[server.headers]]
+  for = '/**'
+  [server.headers.values]
+    Referrer-Policy = 'strict-origin-when-cross-origin'
+    X-Content-Type-Options = 'nosniff'
+    X-Frame-Options = 'DENY'
+    X-XSS-Protection = '1; mode=block'

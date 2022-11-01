@@ -1,0 +1,111 @@
+{{ define "main" }}
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+        <h1 class="mt-4 mb-1 text-4xl font-bold">Project Delorean</h1>
+        <p class="text-sm antialiased text-gray-600 font-light"><a href="https://delorean.cheltladiescollege.org"
+                target="_blank">delorean.cheltladiescollege.org</a></p>
+    </div>
+    <div class="antialiased leading-normal">
+        <p class="my-4">
+            Project Delorean scope was to preserve College's digital heritage as part of a wider historical archive.
+        </p>
+        <p class="my-4">
+            The system was built to take snapshots of the website automatically periodically, these snapshots are then made
+            available via an interface for reference.
+        </p>
+
+        <div class="my-8 grid grid-cols-4 gap-0 leading-normal">
+            <div class="font-semibold">Statistics</div>
+            <div class="font-light text-right col-span-3">
+                First website in archive: 1996<br />
+                25 Years of digital heritage<br />
+                100gb+ of archives<br />
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $image1_avif := resources.Get "/images/delorean/Browser1.avif" | fingerprint }}
+        {{ $image1_webp := resources.Get "/images/delorean/Browser1.webp" | fingerprint }}
+        {{ $image1 := resources.Get "/images/delorean/Browser1.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $image1_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $image1_webp.RelPermalink }}">
+        <img src="{{ $image1.RelPermalink }}" alt="Home Crest" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $image2_avif := resources.Get "/images/delorean/Browser2.avif" | fingerprint }}
+        {{ $image2_webp := resources.Get "/images/delorean/Browser2.webp" | fingerprint }}
+        {{ $image2 := resources.Get "/images/delorean/Browser2.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $image2_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $image2_webp.RelPermalink }}">
+        <img src="{{ $image2.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $image3_avif := resources.Get "/images/delorean/Browser4.avif" | fingerprint }}
+        {{ $image3_webp := resources.Get "/images/delorean/Browser4.webp" | fingerprint }}
+        {{ $image3 := resources.Get "/images/delorean/Browser4.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $image3_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $image3_webp.RelPermalink }}">
+        <img src="{{ $image3.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $image4_avif := resources.Get "/images/delorean/Browser3.avif" | fingerprint }}
+        {{ $image4_webp := resources.Get "/images/delorean/Browser3.webp" | fingerprint }}
+        {{ $image4 := resources.Get "/images/delorean/Browser3.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $image4_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $image4_webp.RelPermalink }}">
+        <img src="{{ $image4.RelPermalink }}" alt="Device Mockup iPad" class="object-cover w-full h-full">
+    </picture>
+</div>
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="antialiased leading-normal my-8">
+        <p class="mb-4">
+           Built using an AWS EC2 instance with large cold storage attached, crawling College domains is performed using wget with custom PHP scripts to parse the data.
+        </p>
+        <p class="mb-4">
+            A simple front end to display the archive in frames allows the users to go back in time and look at any snapshot.
+        </p>
+        <p class="mb-4">
+            An additional integration with updown.io is available for users to see availability information for the various sites around the world, key stake holders are also notified should the sites become unavailable. 
+        </p>
+
+    </div>
+    <div>
+        <div class="my-8 grid grid-cols-2 gap-0">
+            <div class="font-semibold">Stack</div>
+            <div class="font-light">
+                <a href="https://github.com" target="_blank">Github</a><br />
+                <a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2</a><br />
+                &nbsp;
+            </div>
+            <div class="font-semibold">Libraries & Technologies</div>
+            <div class="font-light">
+                <a href="http://php.net/" target="_blank">PHP</a><br />
+                <a href="https://www.gnu.org/software/wget/" target="_blank">Wget</a><br />
+                &nbsp;
+            </div>
+            <div class="font-semibold">Integrations</div>
+            <div class="font-light">
+                <a href="https://updown.io" target="_blank">updown.io</a><br />
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</div>
+
+{{- partial "footer.html" . -}}
+{{ end }}

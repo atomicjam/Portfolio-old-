@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    #content p {
+        @apply my-4;
+    }    
+}
+
+@layer utilities {
+    @keyframes PopIn {
+        0% {
+            opacity: 0.25;
+            transform: scale(0.97);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    .PopIn {
+        animation: PopIn 0.5s ease-in-out;
+    }
+}

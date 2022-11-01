@@ -1,0 +1,137 @@
+{{ define "main" }}
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+        <h1 class="mt-4 mb-1 text-4xl font-bold">Enrichment</h1>
+        <p class="text-sm antialiased text-gray-600 font-light"><a href="https://enrichment.cheltladiescollege.org"
+                target="_blank">enrichment.cheltladiescollege.org</a></p>
+    </div>
+    <div class="antialiased leading-normal">
+        <p class="my-4">
+           
+        </p>
+
+
+        <div class="my-8 grid grid-cols-4 gap-0 leading-normal">
+            <div class="font-semibold">Statistics</div>
+            <div class="font-light text-right col-span-3">
+                2017 Launch - 2022 modernisation<br />
+                Sub 60ms time to DOM render<br />
+                <span class="italic text-xs text-gray-600">c.</span>1,650 visitors per day<br />
+                A+ <a href="https://observatory.mozilla.org/" target="_blank">observatory.mozilla.org</a><br />
+                100/100/100/100 <a href="https://web.dev/measure/" target="_blank">PageSpeed Insights</a><br />
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $homelogo_avif := resources.Get "/images/enrichment/browser1.avif" | fingerprint }}
+        {{ $homelogo_webp := resources.Get "/images/enrichment/browser1.webp" | fingerprint }}
+        {{ $homelogo := resources.Get "/images/enrichment/browser1.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $homelogo_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $homelogo_webp.RelPermalink }}">
+        <img src="{{ $homelogo.RelPermalink }}" alt="Home Crest" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $homeiphone_avif := resources.Get "/images/enrichment/browser2.avif" | fingerprint }}
+        {{ $homeiphone_webp := resources.Get "/images/enrichment/browser2.webp" | fingerprint }}
+        {{ $homeiphone := resources.Get "/images/enrichment/browser2.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $homeiphone_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $homeiphone_webp.RelPermalink }}">
+        <img src="{{ $homeiphone.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $homebrowser_avif := resources.Get "/images/enrichment/browser3.avif" | fingerprint }}
+        {{ $homebrowser_webp := resources.Get "/images/enrichment/browser3.webp" | fingerprint }}
+        {{ $homebrowser := resources.Get "/images/enrichment/browser3.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $homebrowser_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $homebrowser_webp.RelPermalink }}">
+        <img src="{{ $homebrowser.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $homeipad_avif := resources.Get "/images/enrichment/browser4.avif" | fingerprint }}
+        {{ $homeipad_webp := resources.Get "/images/enrichment/browser4.webp" | fingerprint }}
+        {{ $homeipad := resources.Get "/images/enrichment/browser4.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $homeipad_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $homeipad_webp.RelPermalink }}">
+        <img src="{{ $homeipad.RelPermalink }}" alt="Device Mockup iPad" class="object-cover w-full h-full">
+    </picture>
+</div>
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="antialiased leading-normal my-8">
+        <p class="mb-4">
+            Created as a Silverstripe CMS project, modernisation in 2022 converted the site to JAM Stack taking
+            advantage of the new serverless offerings provided by Amazon.
+        </p>
+        <p class="my-4">
+            There was no requirement for a CMS as pages changed infrequently, Github was selected as the repository for
+            the site. Static files are generated using Hugo site generator as part of a CI/CD Pipeline.
+        </p>
+        <p class="my-4">
+            All styles are compiled using TailwindCSS and compiled into a single CSS file, minimal Javascript is needed,
+            Alpine.js was chosen for its lightweight and fast performance.
+        </p>
+        <p class="my-4">
+            To facilitate full offline site support a service worker is created with Workbox to pre cache all assets.
+            This allows students who have not authenticated to the College firewall the ability to navigate to academic
+            resources without having to re-authenticate.
+        </p>
+        <p class="my-4">
+            Dynamic content is added to the site using AWS Lambda functions from AWS API Gateway endpoints. AlpineJS
+            makes a fetch request to the endpoints as required resulting in dynamic content such as current school
+            period/calendar from iSams, or Recent news and events from BBC/The Day.
+        </p>
+        <p class="my-4">
+            During specific calendar periods the site is themed to be more playful for the students with added easter
+            eggs, such as dynamic snow & countdowns to holiday during the festive period.
+        </p>
+    </div>
+    <div>
+        <div class="my-8 grid grid-cols-2 gap-0">
+            <div class="font-semibold">Stack</div>
+            <div class="font-light">
+                <a href="https://gohugo.io" target="_blank">Hugo</a><br />
+                <a href="https://github.com" target="_blank">Github</a><br />
+                <a href="https://aws.amazon.com/amplify/" target="_blank">Amazon Amplify</a><br />
+                <a href="https://aws.amazon.com/certificate-manager/" target="_blank">Amazon Certificate
+                    Manager</a><br />
+                <a href="https://aws.amazon.com/route53/" target="_blank">Amazon Route53</a><br />
+                <a href="https://aws.amazon.com/api-gateway/" target="_blank">Amazon API Gateway</a><br />
+                <a href="https://aws.amazon.com/lambda/" target="_blank">Amazon Lambda</a><br />
+                <a href="https://aws.amazon.com/cloudfront/" target="_blank">Amazon Cloudfront</a><br />&nbsp;
+            </div>
+            <div class="font-semibold">Libraries & Technologies</div>
+            <div class="font-light">
+                HTML5<br />
+                <a href="https://tailwindcss.com" target="_blank">Tailwind.Css</a><br />
+                <a href="https://alpinejs.dev" target="_blank">Alpine.Js</a><br />
+                <a href="https://developer.chrome.com/docs/workbox/" target="_blank">Workbox</a><br />&nbsp;
+            </div>
+            <div class="font-semibold">Integrations</div>
+            <div class="font-light">
+                <a href="https://www.bbc.co.uk" target="_blank">BBC News</a><br />
+                <a href="https://theday.co.uk/" target="_blank">The Day News</a><br />
+                <a href="https://www.isams.com" target="_blank">iSams</a><br />&nbsp;
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{{- partial "footer.html" . -}}
+{{ end }}

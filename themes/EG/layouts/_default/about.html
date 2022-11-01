@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+        {{ $about := resources.Get "/images/about/about.jpg" | fingerprint }}
+        <img src="{{ $about.RelPermalink }}" alt="about" class="float-right w-auto h-full">
+    </div>
+    <div id="content" class="antialiased leading-normal">
+        {{ .Content }}
+    </div>
+</div>
+
+{{- partial "footer.html" . -}}
+{{ end }}

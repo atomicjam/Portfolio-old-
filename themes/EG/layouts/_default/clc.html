@@ -1,0 +1,152 @@
+{{ define "main" }}
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+        <h1 class="mt-4 mb-1 text-4xl font-bold">Cheltenham Ladies' College</h1>
+        <p class="text-sm antialiased text-gray-600 font-light"><a href="https://www.cheltladiescollege.org"
+                target="_blank">cheltladiescollege.org</a></p>
+    </div>
+    <div class="antialiased leading-normal">
+        <p class="my-4">
+            The Cheltenham Ladies' College are one of the oldest and most prestigious schools in the UK.
+            A namesake of distinctive, high-end single sex education offering young women pioneering opportunities.
+        </p>
+        <p class="my-4">
+            The product is reflected in an identity that feels elevated across both printed and digital brand
+            touchpoints balancing the traditional and minimal.
+            The branding defines the view of modern education through sophisticated imagery and glimpses
+            into life at CLC.
+        </p>
+        <p class="my-4">
+            The identity is flexible enough to act as a versatile backdrop for the variety of co-brands.
+        </p>
+
+        <div class="my-8 grid grid-cols-4 gap-0 leading-normal">
+            <div class="font-semibold">Statistics</div>
+            <div class="font-light text-right col-span-3">
+                2016 Launch <br />
+                <span class="italic text-xs text-gray-600">c.</span>200,000 visitors per month<br />
+                A+ <a href="https://observatory.mozilla.org/" target="_blank">observatory.mozilla.org</a><br />
+                100/100/100/100 <a href="https://web.dev/measure/" target="_blank">PageSpeed Insights</a><br />
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $clclogo_avif := resources.Get "/images/clc/clc-logo.avif" | fingerprint }}
+        {{ $clclogo_webp := resources.Get "/images/clc/clc-logo.webp" | fingerprint }}
+        {{ $clclogo := resources.Get "/images/clc/clc-logo.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $clclogo_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $clclogo_webp.RelPermalink }}">
+        <img src="{{ $clclogo.RelPermalink }}" alt="CLC Crest" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $clcphones_avif := resources.Get "/images/clc/clc-phones.avif" | fingerprint }}
+        {{ $clcphones_webp := resources.Get "/images/clc/clc-phones.webp" | fingerprint }}
+        {{ $clcphones := resources.Get "/images/clc/clc-phones.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $clcphones_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $clcphones_webp.RelPermalink }}">
+        <img src="{{ $clcphones.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
+    </picture>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="antialiased leading-normal my-8">
+        <p class="mb-4">
+            Created as a traditional LAMP stack project, the site is built on a foundation of <a href="http://silverstripe.org/" target="_blank">Silverstripe CMS</a> with custom page templates. 
+        </p>
+        <p class="my-4">
+            Custom page templates allow the External Relations team the ability to create content without technical experience. Design elements are individual, components that use standard HTML, CSS & Javascript and can be reused across multiple co-brands for consistency.
+        </p>
+        <p class="my-4">
+            To facilitate collection of user forms, "<a href="https://github.com/silverstripe/silverstripe-userforms" target="_blank">User Defined Forms</a>" module augmented Silverstripe core functionality. CLC has specific requirements around form auto completion, contributions to the open source project were made to add required functionality.
+            Contributions to the project were archived by <a href="https://archiveprogram.github.com" target="_blank">Github into the Arctic Code Vault</a> in 2020.
+        </p>
+        <p class="my-4">
+            Integrations were created to add additional third party data dynamically on the site using API provided by each integrator. News with infinite scrolling, social aggregation and rss support was integrated using Flockler. Custom filterable calendar to show events from the College managed information system iSams. Templates to pull staff vacancies from HR system using Vacancy filler API.
+        </p>
+        <p class="my-4">
+            Initially locally hosted at the College, the project was migrated to AWS for improved resilience and scale. AWS additions included edge caching to improve the experience for overseas users with AWS Cloudfront, alongside security enhancements from AWS WAF & Shield.
+        </p>
+        <p class="my-4">
+            Progressive enhancements to the site have been added over the life of the project improving accessability support, service workers as well as new functionality to enhance user engagement with the addition of pop-out notices. 
+        </p>
+    </div>
+    <div>
+        <div class="my-8 grid grid-cols-2 gap-0">
+            <div class="font-semibold">Stack</div>
+            <div class="font-light">
+                <a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2 Linux</a><br />
+                <a href="https://nginx.org" target="_blank">Nginx</a><br />
+                <a href="https://www.php.net" target="_blank">PHP</a><br />
+                <a href="https://www.silverstripe.org" target="_blank">Silverstripe CMS</a><br />
+                <a href="https://aws.amazon.com/rds/" target="_blank">Amazon RDS (mySQL)</a><br />&nbsp;
+            </div>
+            <div class="font-semibold">Libraries & Technologies</div>
+            <div class="font-light">
+                HTML5<br />
+                CSS - SASS<br />
+                Custom Javascript<br />&nbsp;</div>
+            <div class="font-semibold">Integrations</div>
+            <div class="font-light">
+                <a href="https://flockler.com" target="_blank">Flockler</a><br />
+                <a href="https://hireroad.com/" target="_blank">Vacancy Filler (Hireroad)</a><br />
+                <a href="https://www.isams.com" target="_blank">iSams</a><br />&nbsp;
+            </div>
+            <div class="font-semibold">Credits</div>
+            <div class="font-light">Dave Stokes Photography</div>
+        </div>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $clcbrowser_avif := resources.Get "/images/clc/clc-browser.avif" | fingerprint }}
+        {{ $clcbrowser_webp := resources.Get "/images/clc/clc-browser.webp" | fingerprint }}
+        {{ $clcbrowser := resources.Get "/images/clc/clc-browser.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $clcbrowser_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $clcbrowser_webp.RelPermalink }}">
+        <img src="{{ $clcbrowser.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $clcipad_avif := resources.Get "/images/clc/clc-ipad.avif" | fingerprint }}
+        {{ $clcipad_webp := resources.Get "/images/clc/clc-ipad.webp" | fingerprint }}
+        {{ $clcipad := resources.Get "/images/clc/clc-ipad.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $clcipad_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $clcipad_webp.RelPermalink }}">
+        <img src="{{ $clcipad.RelPermalink }}" alt="Device Mockup iPad" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $clcbrowser_avif := resources.Get "/images/clc/clc-logodevelopment.avif" | fingerprint }}
+        {{ $clcbrowser_webp := resources.Get "/images/clc/clc-logodevelopment.webp" | fingerprint }}
+        {{ $clcbrowser := resources.Get "/images/clc/clc-logodevelopment.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $clcbrowser_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $clcbrowser_webp.RelPermalink }}">
+        <img src="{{ $clcbrowser.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $clcbrowser_avif := resources.Get "/images/clc/prospectus.avif" | fingerprint }}
+        {{ $clcbrowser_webp := resources.Get "/images/clc/prospectus.webp" | fingerprint }}
+        {{ $clcbrowser := resources.Get "/images/clc/prospectus.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $clcbrowser_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $clcbrowser_webp.RelPermalink }}">
+        <img src="{{ $clcbrowser.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
+    </picture>
+
+</div>
+
+{{- partial "footer.html" . -}}
+{{ end }}

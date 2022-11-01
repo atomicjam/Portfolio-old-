@@ -1,0 +1,14 @@
+/* CONTACTS */
+
+elliot@elliotgoode.co.uk — Help and general comments
+
+/* TEAM & THANKS */
+Title:        Elliot Goode.
+Position:     Lead Web/Software Engineer
+Email:        me@elliotgoode.co.uk
+
+/* SITE */
+Created:      2014, relaunch 2016
+Language:     English (UK)
+Standards:    HTML5, CSS3
+Software:     Figma, Visual Studio Code, Tailwindcss, Hugo

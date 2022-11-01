@@ -1,0 +1,17 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title }}</title>
+    <meta name="description" content="" />
+    <meta name="robots" content="index,follow,noodp">
+    <meta name="googlebot" content="index,follow">
+    <link rel="copyright" href="https://">
+    <link rel="author" href="humans.txt">
+    {{ $css := resources.Get "css/styles.css" | resources.PostCSS | minify | fingerprint }}
+    {{ if .Site.IsServer }}
+        <!-- force Hugo to regenerate tailwind css -->
+        {{ $css = $css | resources.ExecuteAsTemplate (printf "css/index.dev.%v.css" now.UnixMilli) . }}
+    {{ end }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}"> 
+</head>

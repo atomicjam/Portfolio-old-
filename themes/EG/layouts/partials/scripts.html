@@ -1,0 +1,2 @@
+{{ $built := resources.Get "js/bundle.js" | js.Build | minify | fingerprint }}
+<script type="text/javascript" src="{{ $built.RelPermalink }}" integrity="{{ $built.Data.Integrity }}" defer></script>
