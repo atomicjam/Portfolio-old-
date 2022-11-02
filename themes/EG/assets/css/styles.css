@@ -20,6 +20,6 @@
         }
     }
     .PopIn {
-        animation: PopIn 0.5s ease-in-out;
+        animation: PopIn 1s ease-in-out;
     }
 }
