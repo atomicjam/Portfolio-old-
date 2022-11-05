@@ -3,9 +3,11 @@
         <!-- Logo  -->        
     </div>
     <div>
+        <a href="/" class="antialiased mr-4 {{ if eq .Title "Home » Elliot Goode" }}underline decoration-cyan-600 decoration-2 underline-offset-4 hover:text-cyan-600 {{ end }}">Home</a>
         <a href="/about" class="antialiased mr-4 {{ if eq .Title "About" }}underline decoration-cyan-600 decoration-2 underline-offset-4 hover:text-cyan-600 {{ end }}">About</a>
         <a href="/work" class="antialiased mr-4 {{ if eq .Title "Works" }}underline decoration-cyan-600 decoration-2 underline-offset-4 hover:text-cyan-600 {{ end }}">Work</a>
-        <a href="/cv" class="antialiased mr-4 {{ if eq .Title "Curriculum Vitae" }}underline decoration-cyan-600 decoration-2 underline-offset-4 hover:text-cyan-600 {{ end }}">Curriculum Vitae</a>
+        <!--<a href="/cv" class="antialiased mr-4 {{ if eq .Title "Curriculum Vitae" }}underline decoration-cyan-600 decoration-2 underline-offset-4 hover:text-cyan-600 {{ end }}">Curriculum Vitae</a>-->
+        <a href="/experiments" class="antialiased mr-4 {{ if eq .Title "Experiments" }}underline decoration-cyan-600 decoration-2 underline-offset-4 hover:text-cyan-600 {{ end }}">Experiments</a>
         <a href="/contact" class="antialiased mr-4 {{ if eq .Title "Contact" }}underline decoration-cyan-600 decoration-2 underline-offset-4 hover:text-cyan-600 {{ end }}">Contact</a>
         <a href="https://github.com/atomicjam" target="_blank" class="antialiased mr-4 hover:text-cyan-600">Github</a>
     </div>
