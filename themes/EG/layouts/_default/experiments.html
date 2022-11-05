@@ -12,55 +12,53 @@
   transform-style: preserve-3d;
 }
 
-#cube .front  { transform: rotateY(   0deg ) translateZ( 100px );}
-#cube .back   { transform: rotateX( 180deg ) translateZ( 100px );}
-#cube .right  { transform: rotateY(  90deg ) translateZ( 100px );}
-#cube .left   { transform: rotateY( -90deg ) translateZ( 100px );}
-#cube .top    { transform: rotateX(  90deg ) translateZ( 100px );}
-#cube .bottom { transform: rotateX( -90deg ) translateZ( 100px );}
+#cube .front  { transform: rotateX( -15deg ) rotateY( -15deg ) translateZ( 125px );}
+#cube .back   { transform: rotateX( 165deg ) rotateY( 15deg ) translateZ( 125px );}
+#cube .right  { transform: rotateX( -15deg ) rotateY( 75deg ) translateZ( 125px );}
+#cube .left   { transform: rotateX( -15deg ) rotateY( -105deg ) translateZ( 125px );}
+#cube .top    { transform: rotateX( 75deg ) rotateY( 0 ) rotateZ( 15deg) translateZ( 125px );}
+#cube .bottom { transform: rotateX( -105deg ) rotateY( 0 ) rotateZ( -15deg) translateZ( 125px );}
 
-#cube { transform: translateZ( -100px ); }
+#cube { transform: translateZ( -125px ); }
 
-#cube.show-front  { transform: translateZ( -100px ) rotateY(    0deg ); }
-#cube.show-back   { transform: translateZ( -100px ) rotateX( -180deg ); }
-#cube.show-right  { transform: translateZ( -100px ) rotateY(  -90deg ); }
-#cube.show-left   { transform: translateZ( -100px ) rotateY(   90deg ); }
-#cube.show-top    { transform: translateZ( -100px ) rotateX(  -90deg ); }
-#cube.show-bottom { transform: translateZ( -100px ) rotateX(   90deg ); }
+#cube.show-front  { transform: translateZ( -125px ) rotateY(    0deg ); }
+#cube.show-back   { transform: translateZ( -125px ) rotateX( -180deg ); }
+#cube.show-right  { transform: translateZ( -125px ) rotateY(  -90deg ); }
+#cube.show-left   { transform: translateZ( -125px ) rotateY(   90deg ); }
+#cube.show-top    { transform: translateZ( -125px ) rotateX(  -90deg ); }
+#cube.show-bottom { transform: translateZ( -125px ) rotateX(   90deg ); }
 
-#cube { transition: transform 2s; }
+#cube { transition: transform 3s; }
 </style>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <div>
-        <h1 class="mt-4 mb-1 text-4xl font-bold">Video webm with CSS3 transforms</h1>
+        <h1 class="mt-4 mb-1 text-4xl font-bold">CSS Video Transforms</h1>
         <p class="mt-4 text-sm antialiased text-gray-600 font-light my-4">Try the controls...</p>
-        <section id="options">
-            <p id="show-buttons">
-                <button class="show-front">Front Face</button><br />
-                <button class="show-back">Back Face</button><br />
-                <button class="show-right">Right Face</button><br />
-                <button class="show-left">Left Face</button><br />
-                <button class="show-top">Top Face</button><br />
-                <button class="show-bottom">Bottom Face</button><br />
-            </p>
-        </section>
+        <p id="show-buttons">
+            <button id="show-front" class="text-white bg-black hover:bg-gray-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Front Face</button>
+            <button id="show-back" class="text-white bg-cyan-600 hover:bg-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Back Face</button>
+            <button id="show-right" class="text-white bg-red-600 hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Right Face</button>
+            <button id="show-left" class="text-white bg-yellow-600 hover:bg-yellow-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Left Face</button>
+            <button id="show-top" class="text-white bg-green-600 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Top Face</button>
+            <button id="show-bottom" class="text-white bg-indigo-600 hover:bg-indigo-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Bottom Face</button>
+        </p>
     </div>
     <div class="antialiased leading-normal">
         <p class="my-4">
             {{ $poster := resources.Get "/images/experiments/poster.jpg" | fingerprint }}
-            {{ $webm := resources.Get "/images/experiments/webmversion.webm" | fingerprint }}
+            {{ $webm := resources.Get "/images/experiments/output.webm" | fingerprint }}
+            {{ $mp4 := resources.Get "/images/experiments/output.mp4" | fingerprint }}
             {{ $clclogo := resources.Get "/images/experiments/CLC_Logo_Xsmall_WHITE.svg" | fingerprint }}
  
-            <section class="cube-container my-16 mx-auto relative h-[200px] w-[200px]">
+            <section class="cube-container my-16 mx-auto relative h-[250px] w-[250px]">
                 <div id="cube">
-                    <figure class="front absolute block h-[200px] w-[200px] m-0">
+                    <figure class="front absolute block h-[250px] w-[250px] m-0">
                         <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
-                            <div
-                                class="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-r opacity-25 from-indigo-500 via-purple-500 to-pink-500">
-                            </div>
-                            <video class="inline-block z-0 h-[200px] w-[200px] object-cover object-center" id="videotest" poster="{{ $poster.RelPermalink }}" preload="auto" loop="true" muted="true" autoplay>
-                                <source src="{{ $webm.RelPermalink }}" type="video/webm;">
+                            <div class="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-r opacity-50 from-black via-gray-800 to-black"></div>
+                            <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="front" poster="{{ $poster.RelPermalink }}" preload="auto" playsinline loop muted autoplay>
+                                <source src="{{ $webm.RelPermalink }}" type="video/webm">
+                                <source src="{{ $mp4.RelPermalink }}" type="video/mp4">
                             </video>
                             <div class="absolute left-0 top-0 text-white z-20 w-full">
                                 <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
@@ -68,14 +66,15 @@
                             </div>
                         </div>
                     </figure>
-                    <figure class="back absolute block h-[200px] w-[200px] m-0">
+                    <figure class="back absolute block h-[250px] w-[250px] m-0">
                         <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
                             <div
-                                class="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-r opacity-25 from-green-500 via-blue-500 to-yellow-500">
+                                class="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-r opacity-50 from-cyan-600 via-cyan-800 to-cyan-600">
                             </div>
-                            <video class="inline-block z-0 h-[200px] w-[200px] object-cover object-center" id="videotest" poster="{{ $poster.RelPermalink }}" preload="auto" loop="true"
+                            <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="videotest" poster="{{ $poster.RelPermalink }}" preload="auto" loop="true"
                                 muted="true" autoplay>
-                                <source src="{{ $webm.RelPermalink }}" type="video/webm;">
+                                <source src="{{ $webm.RelPermalink }}" type="video/webm">
+                                <source src="{{ $mp4.RelPermalink }}" type="video/mp4">
                             </video>
                             <div class="absolute left-0 top-0 text-white z-20 w-full">
                                 <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
@@ -83,14 +82,15 @@
                             </div>
                         </div>
                     </figure>
-                    <figure class="right absolute block h-[200px] w-[200px] m-0">
+                    <figure class="right absolute block h-[250px] w-[250px] m-0">
                         <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
                             <div
-                                class="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-r opacity-25 from-yellow-500 via-purple-500 to-orange-500">
+                                class="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-r opacity-50 from-red-500 via-red-800 to-red-500">
                             </div>
-                            <video class="inline-block z-0 h-[200px] w-[200px] object-cover object-center" id="videotest" poster="{{ $poster.RelPermalink }}" preload="auto" loop="true"
+                            <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="videotest" poster="{{ $poster.RelPermalink }}" preload="auto" loop="true"
                                 muted="true" autoplay>
-                                <source src="{{ $webm.RelPermalink }}" type="video/webm;">
+                                <source src="{{ $webm.RelPermalink }}" type="video/webm">
+                                <source src="{{ $mp4.RelPermalink }}" type="video/mp4">
                             </video>
                             <div class="absolute left-0 top-0 text-white z-20 w-full">
                                 <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
@@ -98,14 +98,15 @@
                             </div>
                         </div>
                     </figure>
-                    <figure class="left absolute block h-[200px] w-[200px] m-0">
+                    <figure class="left absolute block h-[250px] w-[250px] m-0">
                         <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
                             <div
-                                class="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-r opacity-25 from-red-500 via-green-500 to-blue-500">
+                                class="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-r opacity-50 from-yellow-500 via-yellow-800 to-yellow-500">
                             </div>
-                            <video class="inline-block z-0 h-[200px] w-[200px] object-cover object-center" id="videotest" poster="{{ $poster.RelPermalink }}" preload="auto" loop="true"
+                            <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="videotest" poster="{{ $poster.RelPermalink }}" preload="auto" loop="true"
                                 muted="true" autoplay>
-                                <source src="{{ $webm.RelPermalink }}" type="video/webm;">
+                                <source src="{{ $webm.RelPermalink }}" type="video/webm">
+                                <source src="{{ $mp4.RelPermalink }}" type="video/mp4">
                             </video>
                             <div class="absolute left-0 top-0 text-white z-20 w-full">
                                 <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
@@ -113,14 +114,15 @@
                             </div>
                         </div>
                     </figure>
-                    <figure class="top absolute block h-[200px] w-[200px] m-0">
+                    <figure class="top absolute block h-[250px] w-[250px] m-0">
                         <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
                             <div
-                                class="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-r opacity-25 from-blue-500 via-gray-500 to-yellow-500">
+                                class="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-r opacity-50 from-green-500 via-green-800 to-green-500">
                             </div>
-                            <video class="inline-block z-0 h-[200px] w-[200px] object-cover object-center" id="videotest" poster="{{ $poster.RelPermalink }}" preload="auto" loop="true"
+                            <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="videotest" poster="{{ $poster.RelPermalink }}" preload="auto" loop="true"
                                 muted="true" autoplay>
-                                <source src="{{ $webm.RelPermalink }}" type="video/webm;">
+                                <source src="{{ $webm.RelPermalink }}" type="video/webm">
+                                <source src="{{ $mp4.RelPermalink }}" type="video/mp4">
                             </video>
                             <div class="absolute left-0 top-0 text-white z-20 w-full">
                                 <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
@@ -128,14 +130,15 @@
                             </div>
                         </div>
                     </figure>
-                    <figure class="bottom absolute block h-[200px] w-[200px] m-0">
+                    <figure class="bottom absolute block h-[250px] w-[250px] m-0">
                         <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
                             <div
-                                class="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-r opacity-25 from-orange-500 via-purple-500 to-green-500">
+                                class="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-r opacity-50 from-indigo-500 via-indigo-800 to-indigo-500">
                             </div>
-                            <video class="inline-block z-0 h-[200px] w-[200px] object-cover object-center" id="videotest" poster="{{ $poster.RelPermalink }}" preload="auto" loop="true"
+                            <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="videotest" poster="{{ $poster.RelPermalink }}" preload="auto" loop="true"
                                 muted="true" autoplay>
-                                <source src="{{ $webm.RelPermalink }}" type="video/webm;">
+                                <source src="{{ $webm.RelPermalink }}" type="video/webm">
+                                <source src="{{ $mp4.RelPermalink }}" type="video/mp4">
                             </video>
                             <div class="absolute left-0 top-0 text-white z-20 w-full">
                                 <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
@@ -183,7 +186,7 @@
 
             onButtonClick = function (event) {
                 box.removeClassName(panelClassName);
-                panelClassName = event.target.className;
+                panelClassName = event.target.id;
                 box.addClassName(panelClassName);
             };
 
