@@ -42,8 +42,7 @@
     <div class="antialiased leading-normal">
         <p class="my-4">
             {{ $poster := resources.Get "/images/experiments/poster.jpg" | fingerprint }}
-            {{ $webm := resources.Get "/images/experiments/output.webm" | fingerprint }}
-            {{ $mp4 := resources.Get "/images/experiments/output.mp4" | fingerprint }}
+            {{ $webm := resources.Get "/images/experiments/webmversion.webm" | fingerprint }}
             {{ $clclogo := resources.Get "/images/experiments/CLC_Logo_Xsmall_WHITE.svg" | fingerprint }}
  
             <section class="cube-container my-16 mx-auto relative h-[250px] w-[250px]">
