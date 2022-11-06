@@ -1,7 +1,7 @@
 {{ define "main" }}
 
-
-<script defer language="javascript" type="text/javascript" src="{{ "/js/bundle.f9c97fb35466195f.js" }}"></script>
-<canvas class="webgl"></canvas>
+{{ $three := resources.Get "js/three.js" | js.Build | minify | fingerprint }}
+<script type="text/javascript" src="{{ $three.RelPermalink }}" integrity="{{ $three.Data.Integrity }}" defer></script>
+<canvas id="webgl"></canvas>
 
 {{ end }}
