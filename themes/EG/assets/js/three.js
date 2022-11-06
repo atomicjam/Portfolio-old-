@@ -123,13 +123,10 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 /**
  * Animate
  */
-const clock = new THREE.Clock()
+gsap.to(mesh.rotation, { duration: 3000, delay: 0, y: 360, repeat: -1 })
+
 const tick = () =>
 {
-    const elapsedTime = clock.getElapsedTime()
-    // rotate 
-    mesh.rotation.y += 0.005
-
     // Update controls
     controls.update()
     // Render
