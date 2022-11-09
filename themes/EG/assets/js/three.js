@@ -19,8 +19,11 @@ const parameters = {
  * Sizes
  */
 const sizes = {
-    width: window.innerWidth - 64,
+    width: 1152,
     height: window.innerHeight - 80 - 64
+}
+if (window.innerWidth < 1152) {
+    sizes.width = window.innerWidth
 }
 /**
  * Base
@@ -43,8 +46,11 @@ scene.add(mesh)
 window.addEventListener('resize', () =>
 {
     // Update sizes
-    sizes.width = window.innerWidth
-    sizes.height = window.innerHeight
+    sizes.width = 1152
+    if (window.innerWidth < 1152) {
+        sizes.width = window.innerWidth
+    }
+    sizes.height = window.innerHeight - 80 - 64
     // Update camera
     camera.aspect = sizes.width / sizes.height
     camera.updateProjectionMatrix()
