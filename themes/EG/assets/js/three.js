@@ -19,11 +19,11 @@ const parameters = {
  * Sizes
  */
 const sizes = {
-    width: 1152,
+    width: 1152 - 64,
     height: window.innerHeight - 80 - 64
 }
 if (window.innerWidth < 1152) {
-    sizes.width = window.innerWidth
+    sizes.width = window.innerWidth - 64
 }
 /**
  * Base
@@ -48,7 +48,7 @@ window.addEventListener('resize', () =>
     // Update sizes
     sizes.width = 1152
     if (window.innerWidth < 1152) {
-        sizes.width = window.innerWidth
+        sizes.width = window.innerWidth - 64 
     }
     sizes.height = window.innerHeight - 80 - 64
     // Update camera
