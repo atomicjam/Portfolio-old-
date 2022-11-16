@@ -3,7 +3,7 @@
 <div id="animation">
 {{ $three := resources.Get "js/three.js" | js.Build | minify | fingerprint }}
 <script type="text/javascript" src="{{ $three.RelPermalink }}" integrity="{{ $three.Data.Integrity }}" defer></script>
-<canvas id="webgl"></canvas>
+<canvas id="webgl" class="absolute left-8"></canvas>
 </div>
 
 {{ end }}
