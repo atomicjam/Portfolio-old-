@@ -10,7 +10,7 @@ With 20+ years experience, an extensive knowledge of HTML CSS & Javascript along
 
 Typically I would describe my work as clean, understated & timeless with strong focus on detail & consistency.
 
-I build bespoke applications for a wide range of audiences and business needs, comfortable working with Cloud vendors such as AWS. I cut my teath as a IT technician, equally at home working in a physical data centre directly on the tin or in the cloud.    
+I build bespoke applications for a range of audiences & business needs, comfortable working with Cloud vendors such as AWS. I cut my teath as a IT technician, equally at home working in a physical data centre directly on the tin or in the cloud.    
 
 <!--
 3rd Wave Coffee

@@ -1,29 +1,65 @@
 {{ define "main" }}
 
 <style>
-.cube-container {
-    perspective: 1000px;
-}
-#cube {
-  transform-style: preserve-3d;
-}
+    .cube-container {
+        perspective: 1000px;
+    }
 
-#cube .front  { transform: rotateX( -15deg ) rotateY( -15deg ) translateZ( 125px );}
-#cube .back   { transform: rotateX( 165deg ) rotateY( 15deg ) translateZ( 125px );}
-#cube .right  { transform: rotateX( -15deg ) rotateY( 75deg ) translateZ( 125px );}
-#cube .left   { transform: rotateX( -15deg ) rotateY( -105deg ) translateZ( 125px );}
-#cube .top    { transform: rotateX( 75deg ) rotateY( 0 ) rotateZ( 15deg) translateZ( 125px );}
-#cube .bottom { transform: rotateX( -105deg ) rotateY( 0 ) rotateZ( -15deg) translateZ( 125px );}
+    #cube {
+        transform-style: preserve-3d;
+    }
 
-#cube { transform: translateZ( -125px ); }
+    #cube .front {
+        transform: rotateX(-15deg) rotateY(-15deg) translateZ(125px);
+    }
 
-#cube.show-front  { transform: translateZ( -125px ) rotateY(    0deg ); }
-#cube.show-back   { transform: translateZ( -125px ) rotateX( -180deg ); }
-#cube.show-right  { transform: translateZ( -125px ) rotateY(  -90deg ); }
-#cube.show-left   { transform: translateZ( -125px ) rotateY(   90deg ); }
-#cube.show-top    { transform: translateZ( -125px ) rotateX(  -90deg ); }
-#cube.show-bottom { transform: translateZ( -125px ) rotateX(   90deg ); }
+    #cube .back {
+        transform: rotateX(165deg) rotateY(15deg) translateZ(125px);
+    }
 
+    #cube .right {
+        transform: rotateX(-15deg) rotateY(75deg) translateZ(125px);
+    }
+
+    #cube .left {
+        transform: rotateX(-15deg) rotateY(-105deg) translateZ(125px);
+    }
+
+    #cube .top {
+        transform: rotateX(75deg) rotateY(0) rotateZ(15deg) translateZ(125px);
+    }
+
+    #cube .bottom {
+        transform: rotateX(-105deg) rotateY(0) rotateZ(-15deg) translateZ(125px);
+    }
+
+    #cube {
+        transform: translateZ(-125px);
+    }
+
+    #cube.show-front {
+        transform: translateZ(-125px) rotateY(0deg);
+    }
+
+    #cube.show-back {
+        transform: translateZ(-125px) rotateX(-180deg);
+    }
+
+    #cube.show-right {
+        transform: translateZ(-125px) rotateY(-90deg);
+    }
+
+    #cube.show-left {
+        transform: translateZ(-125px) rotateY(90deg);
+    }
+
+    #cube.show-top {
+        transform: translateZ(-125px) rotateX(-90deg);
+    }
+
+    #cube.show-bottom {
+        transform: translateZ(-125px) rotateX(90deg);
+    }
 </style>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -31,12 +67,24 @@
         <h1 class="mt-4 mb-1 text-4xl font-bold">CSS Perspective Video Transforms</h1>
         <p class="mt-4 text-sm antialiased text-gray-600 font-light my-4">Try the controls...</p>
         <p id="show-buttons">
-            <button id="show-front" class="w-36 text-white bg-black hover:bg-gray-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Front Face</button>
-            <button id="show-back" class="w-36 text-white bg-cyan-600 hover:bg-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Back Face</button>
-            <button id="show-right" class="w-36 text-white bg-red-600 hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Right Face</button>
-            <button id="show-left" class="w-36 text-white bg-yellow-600 hover:bg-yellow-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Left Face</button>
-            <button id="show-top" class="w-36 text-white bg-green-600 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Top Face</button>
-            <button id="show-bottom" class="w-36 text-white bg-indigo-600 hover:bg-indigo-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Bottom Face</button>
+            <button id="show-front"
+                class="w-36 text-white bg-black hover:bg-gray-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Front
+                Face</button>
+            <button id="show-back"
+                class="w-36 text-white bg-cyan-600 hover:bg-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Back
+                Face</button>
+            <button id="show-right"
+                class="w-36 text-white bg-red-600 hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Right
+                Face</button>
+            <button id="show-left"
+                class="w-36 text-white bg-yellow-600 hover:bg-yellow-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Left
+                Face</button>
+            <button id="show-top"
+                class="w-36 text-white bg-green-600 hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Top
+                Face</button>
+            <button id="show-bottom"
+                class="w-36 text-white bg-indigo-600 hover:bg-indigo-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Bottom
+                Face</button>
         </p>
     </div>
     <div class="antialiased leading-normal">
@@ -44,83 +92,100 @@
             {{ $poster := resources.Get "/images/experiments/poster.jpg" | fingerprint }}
             {{ $webm := resources.Get "/images/experiments/webmversion.webm" | fingerprint }}
             {{ $clclogo := resources.Get "/images/experiments/CLC_Logo_Xsmall_WHITE.svg" | fingerprint }}
- 
-            <section class="cube-container my-16 mx-auto relative h-[250px] w-[250px]">
-                <div id="cube" class="absolute w-full h-full transition-transform duration-1000 ease-in-out translate-z-[-125px]">
-                    <figure class="front absolute block h-[250px] w-[250px] m-0 transform-gpu">
-                        <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
-                            <div class="absolute left-0 top-0 w-full h-full z-10 bg-black opacity-50 pointer-events-none"></div>
-                            <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="front" poster="{{ $poster.RelPermalink }}" autoplay muted loop playsinline>
-                                <source src="{{ $webm.RelPermalink }}" type="video/webm">
-                            </video>
-                            <div class="absolute left-0 top-0 text-white z-20 w-full pointer-events-none">
-                                <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
-                                <p class="block text-center">Front</p>
-                            </div>
+
+        <section class="cube-container my-16 mx-auto relative h-[250px] w-[250px]">
+            <div id="cube"
+                class="absolute w-full h-full transition-transform duration-1000 ease-in-out translate-z-[-125px]">
+                <figure class="front absolute block h-[250px] w-[250px] m-0 transform-gpu">
+                    <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
+                        <div class="absolute left-0 top-0 w-full h-full z-10 bg-black opacity-50 pointer-events-none">
                         </div>
-                    </figure>
-                    <figure class="back absolute block h-[250px] w-[250px] m-0 transform-gpu">
-                        <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
-                            <div class="absolute left-0 top-0 w-full h-full z-10 bg-cyan-600 opacity-50 pointer-events-none"></div>
-                            <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="back" poster="{{ $poster.RelPermalink }}" autoplay muted loop playsinline>
-                                <source src="{{ $webm.RelPermalink }}" type="video/webm">
-                            </video>
-                            <div class="absolute left-0 top-0 text-white z-20 w-full pointer-events-none">
-                                <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
-                                <p class="block text-center">back</p>
-                            </div>
+                        <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="front"
+                            poster="{{ $poster.RelPermalink }}" autoplay muted loop playsinline>
+                            <source src="{{ $webm.RelPermalink }}" type="video/webm">
+                        </video>
+                        <div class="absolute left-0 top-0 text-white z-20 w-full pointer-events-none">
+                            <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
+                            <p class="block text-center">Front</p>
                         </div>
-                    </figure>
-                    <figure class="right absolute block h-[250px] w-[250px] m-0 transform-gpu">
-                        <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
-                            <div class="absolute left-0 top-0 w-full h-full z-10 bg-red-500 opacity-50 pointer-events-none"></div>
-                            <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="right" poster="{{ $poster.RelPermalink }}" autoplay muted loop playsinline>
-                                <source src="{{ $webm.RelPermalink }}" type="video/webm">
-                            </video>
-                            <div class="absolute left-0 top-0 text-white z-20 w-full pointer-events-none">
-                                <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
-                                <p class="block text-center">Right</p>
-                            </div>
+                    </div>
+                </figure>
+                <figure class="back absolute block h-[250px] w-[250px] m-0 transform-gpu">
+                    <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
+                        <div
+                            class="absolute left-0 top-0 w-full h-full z-10 bg-cyan-600 opacity-50 pointer-events-none">
                         </div>
-                    </figure>
-                    <figure class="left absolute block h-[250px] w-[250px] m-0 transform-gpu">
-                        <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
-                            <div class="absolute left-0 top-0 w-full h-full z-10 bg-yellow-500 opacity-50 pointer-events-none"></div>
-                            <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="left" poster="{{ $poster.RelPermalink }}" autoplay muted loop playsinline>
-                                <source src="{{ $webm.RelPermalink }}" type="video/webm">
-                            </video>
-                            <div class="absolute left-0 top-0 text-white z-20 w-full pointer-events-none">
-                                <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
-                                <p class="block text-center">Left</p>
-                            </div>
+                        <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="back"
+                            poster="{{ $poster.RelPermalink }}" autoplay muted loop playsinline>
+                            <source src="{{ $webm.RelPermalink }}" type="video/webm">
+                        </video>
+                        <div class="absolute left-0 top-0 text-white z-20 w-full pointer-events-none">
+                            <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
+                            <p class="block text-center">back</p>
                         </div>
-                    </figure>
-                    <figure class="top absolute block h-[250px] w-[250px] m-0 transform-gpu">
-                        <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
-                            <div class="absolute left-0 top-0 w-full h-full z-10 bg-green-500 opacity-50 pointer-events-none"></div>
-                            <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="top" poster="{{ $poster.RelPermalink }}" autoplay muted loop playsinline>
-                                <source src="{{ $webm.RelPermalink }}" type="video/webm">
-                            </video>
-                            <div class="absolute left-0 top-0 text-white z-20 w-full pointer-events-none">
-                                <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
-                                <p class="block text-center">Top</p>
-                            </div>
+                    </div>
+                </figure>
+                <figure class="right absolute block h-[250px] w-[250px] m-0 transform-gpu">
+                    <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
+                        <div class="absolute left-0 top-0 w-full h-full z-10 bg-red-500 opacity-50 pointer-events-none">
                         </div>
-                    </figure>
-                    <figure class="bottom absolute block h-[250px] w-[250px] m-0 transform-gpu">
-                        <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
-                            <div class="absolute left-0 top-0 w-full h-full z-10 bg-indigo-500 opacity-50 pointer-events-none"></div>
-                            <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="bottom" poster="{{ $poster.RelPermalink }}" autoplay muted loop playsinline>
-                                <source src="{{ $webm.RelPermalink }}" type="video/webm">
-                            </video>
-                            <div class="absolute left-0 top-0 text-white z-20 w-full pointer-events-none">
-                                <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
-                                <p class="block text-center">Bottom</p>
-                            </div>
+                        <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="right"
+                            poster="{{ $poster.RelPermalink }}" autoplay muted loop playsinline>
+                            <source src="{{ $webm.RelPermalink }}" type="video/webm">
+                        </video>
+                        <div class="absolute left-0 top-0 text-white z-20 w-full pointer-events-none">
+                            <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
+                            <p class="block text-center">Right</p>
                         </div>
-                    </figure>
-                </div>
-            </section>
+                    </div>
+                </figure>
+                <figure class="left absolute block h-[250px] w-[250px] m-0 transform-gpu">
+                    <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
+                        <div
+                            class="absolute left-0 top-0 w-full h-full z-10 bg-yellow-500 opacity-50 pointer-events-none">
+                        </div>
+                        <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="left"
+                            poster="{{ $poster.RelPermalink }}" autoplay muted loop playsinline>
+                            <source src="{{ $webm.RelPermalink }}" type="video/webm">
+                        </video>
+                        <div class="absolute left-0 top-0 text-white z-20 w-full pointer-events-none">
+                            <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
+                            <p class="block text-center">Left</p>
+                        </div>
+                    </div>
+                </figure>
+                <figure class="top absolute block h-[250px] w-[250px] m-0 transform-gpu">
+                    <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
+                        <div
+                            class="absolute left-0 top-0 w-full h-full z-10 bg-green-500 opacity-50 pointer-events-none">
+                        </div>
+                        <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="top"
+                            poster="{{ $poster.RelPermalink }}" autoplay muted loop playsinline>
+                            <source src="{{ $webm.RelPermalink }}" type="video/webm">
+                        </video>
+                        <div class="absolute left-0 top-0 text-white z-20 w-full pointer-events-none">
+                            <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
+                            <p class="block text-center">Top</p>
+                        </div>
+                    </div>
+                </figure>
+                <figure class="bottom absolute block h-[250px] w-[250px] m-0 transform-gpu">
+                    <div class="w-full h-auto opacity-100 relative p-0 m-0 overflow-hidden">
+                        <div
+                            class="absolute left-0 top-0 w-full h-full z-10 bg-indigo-500 opacity-50 pointer-events-none">
+                        </div>
+                        <video class="inline-block z-0 h-[250px] w-[250px] object-cover object-center" id="bottom"
+                            poster="{{ $poster.RelPermalink }}" autoplay muted loop playsinline>
+                            <source src="{{ $webm.RelPermalink }}" type="video/webm">
+                        </video>
+                        <div class="absolute left-0 top-0 text-white z-20 w-full pointer-events-none">
+                            <img class="block w-32 m-8" src="{{ $clclogo.RelPermalink }}" />
+                            <p class="block text-center">Bottom</p>
+                        </div>
+                    </div>
+                </figure>
+            </div>
+        </section>
         </p>
     </div>
 </div>
@@ -168,6 +233,144 @@
 
 </script>
 
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+        <h1 class="mt-4 mb-1 text-4xl font-bold">CSS Scroll Timeline Polyfill Parallax Criss Cross</h1>
+        <p class="mt-4 text-sm antialiased text-gray-600 font-light my-4">Scroll down...</p>
+    </div>
+</div>
+
+<div class="collage">
+    <div class="photo-block">
+        <div class="photo-grid">
+            <div class="photo"><img src="https://picsum.photos/600/800?random=1" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=2" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=3" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=4" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=5" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=6" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=7" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=8" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=9" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=10" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=11" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=12" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=13" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=14" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=15" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=16" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=17" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=18" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=19" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=20" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=21" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=22" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=23" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=24" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=25" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=26" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=27" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=28" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=29" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=30" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=31" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=32" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=33" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=34" alt=""></div>
+            <div class="photo"><img src="https://picsum.photos/600/800?random=35" alt=""></div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+.photo-block {
+    position: sticky;
+    top: calc(50% - 30vh);
+    height: 60vh;
+	width: 100%;
+	display: grid;
+    overflow: hidden;
+}
+
+.photo-grid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(38deg);
+    display: grid;  
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.photo {
+  aspect-ratio: 3 / 4;
+  width: 20vmax;
+}
+
+.collage {
+  height: 200vh;
+  view-timeline: --collage;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo:nth-of-type(7n + 1):nth-of-type(even),
+.photo:nth-of-type(7n + 3):nth-of-type(even),
+.photo:nth-of-type(7n + 5):nth-of-type(even),
+.photo:nth-of-type(7n + 7):nth-of-type(even) {
+  --vertical: -100%;
+  --horizontal: 100%;
+}
+.photo:nth-of-type(7n + 1):nth-of-type(odd),
+.photo:nth-of-type(7n + 3):nth-of-type(odd),
+.photo:nth-of-type(7n + 5):nth-of-type(odd),
+.photo:nth-of-type(7n + 7):nth-of-type(odd) {
+  --vertical: -100%;
+  --horizontal: -100%;
+}
+
+.photo:nth-of-type(7n + 2):nth-of-type(even),
+.photo:nth-of-type(7n + 4):nth-of-type(even),
+.photo:nth-of-type(7n + 6):nth-of-type(even) {
+  --vertical: 100%;
+  --horizontal: -100%;
+}
+
+.photo:nth-of-type(7n + 2):nth-of-type(odd),
+.photo:nth-of-type(7n + 4):nth-of-type(odd),
+.photo:nth-of-type(7n + 6):nth-of-type(odd) {
+  --vertical: 100%;
+  --horizontal: 100%;
+}
+
+.photo {
+  animation-name: travel;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-timeline: --collage;
+  animation-delay: enter 100%;
+  animation-end-delay: exit 0%;
+}
+
+@keyframes travel {
+  0% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 var(--vertical);
+  }
+  100% {
+    translate: var(--horizontal) var(--vertical);
+  }
+}
+</style>
+<script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js" defer></script>
 
 
 {{- partial "footer.html" . -}}
