@@ -7,12 +7,20 @@
     </div>
     <div class="antialiased leading-normal">
         <p class="my-4">
-            todo
+            Contractors system provides a centralised system to store the compliance data around each of the contractors The Cheltenham Ladies' College uses.
         </p>
+
+        <p class="my-4">
+            Each contractor is presented with a portal they can complete the required documents, documents can be check by the CLC sponsor for compliance.
+        </p>
+
+        <p class="my-4">
+            The system automaticlly chases expired paperwork and provides reports to Health & Safety and Compliance teams to ensure DBS checks, Risk assessments e.t.c are in place before work begins.
+        </p>
+
         <div class="my-8 grid grid-cols-4 gap-0 leading-normal">
             <div class="font-semibold">Statistics</div>
             <div class="font-light text-right col-span-3">
-                todo <br />
                 A+ <a href="https://observatory.mozilla.org/" target="_blank">observatory.mozilla.org</a><br />
                 100/100/100/100 <a href="https://web.dev/measure/" target="_blank">PageSpeed Insights</a><br />
             </div>
@@ -25,9 +33,9 @@
     <picture class="object-cover w-full h-full opacity-0"
         x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
         x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
-        {{ $clclogo_avif := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clclogo_webp := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clclogo := resources.Get "/images/placeholder.png" | fingerprint }}
+        {{ $clclogo_avif := resources.Get "/images/contractors/contractors-browser.avif" | fingerprint }}
+        {{ $clclogo_webp := resources.Get "/images/contractors/contractors-browser.webp" | fingerprint }}
+        {{ $clclogo := resources.Get "/images/contractors/contractors-browser.jpg" | fingerprint }}
         <source type="image/avif" srcset="{{ $clclogo_avif.RelPermalink }}">
         <source type="image/webp" srcset="{{ $clclogo_webp.RelPermalink }}">
         <img src="{{ $clclogo.RelPermalink }}" alt="CLC Crest" class="object-cover w-full h-full">
@@ -36,41 +44,22 @@
     <picture class="object-cover w-full h-full opacity-0"
         x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
         x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
-        {{ $clcphones_avif := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clcphones_webp := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clcphones := resources.Get "/images/placeholder.png" | fingerprint }}
+        {{ $clcphones_avif := resources.Get "/images/contractors/contractors-browser2.avif" | fingerprint }}
+        {{ $clcphones_webp := resources.Get "/images/contractors/contractors-browser2.webp" | fingerprint }}
+        {{ $clcphones := resources.Get "/images/contractors/contractors-browser2.jpg" | fingerprint }}
         <source type="image/avif" srcset="{{ $clcphones_avif.RelPermalink }}">
         <source type="image/webp" srcset="{{ $clcphones_webp.RelPermalink }}">
         <img src="{{ $clcphones.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
     </picture>
 
-    <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
-        {{ $clcbrowser_avif := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clcbrowser_webp := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clcbrowser := resources.Get "/images/placeholder.png" | fingerprint }}
-        <source type="image/avif" srcset="{{ $clcbrowser_avif.RelPermalink }}">
-        <source type="image/webp" srcset="{{ $clcbrowser_webp.RelPermalink }}">
-        <img src="{{ $clcbrowser.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
-    </picture>
-
-    <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
-        {{ $clcipad_avif := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clcipad_webp := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clcipad := resources.Get "/images/placeholder.png" | fingerprint }}
-        <source type="image/avif" srcset="{{ $clcipad_avif.RelPermalink }}">
-        <source type="image/webp" srcset="{{ $clcipad_webp.RelPermalink }}">
-        <img src="{{ $clcipad.RelPermalink }}" alt="Device Mockup iPad" class="object-cover w-full h-full">
-    </picture>
 </div>
 
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <div class="antialiased leading-normal my-8">
-        <p class="mb-4">todo</p>
+        <p class="mb-4">
+            Created using the Laravel Framework, Contractors when added by a CLC sponsor receive a login and are asked to complete simple set of forms to provide College with the required paperwork.
+        </p>
     </div>
     <div>
         <div class="my-8 grid grid-cols-2 gap-0">
