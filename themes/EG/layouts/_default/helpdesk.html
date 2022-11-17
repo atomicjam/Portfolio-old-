@@ -44,55 +44,40 @@
 
     <picture class="object-cover w-full h-full opacity-25"
         x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
-        {{ $homeiphone_avif := resources.Get "/images/helpdesk/helpdesk-phone.avif" | fingerprint }}
-        {{ $homeiphone_webp := resources.Get "/images/helpdesk/helpdesk-phone.webp" | fingerprint }}
-        {{ $homeiphone := resources.Get "/images/helpdesk/helpdesk-phone.jpg" | fingerprint }}
+        {{ $homeiphone_avif := resources.Get "/images/helpdesk/helpdesk-browser.avif" | fingerprint }}
+        {{ $homeiphone_webp := resources.Get "/images/helpdesk/helpdesk-browser.webp" | fingerprint }}
+        {{ $homeiphone := resources.Get "/images/helpdesk/helpdesk-browser.jpg" | fingerprint }}
         <source type="image/avif" srcset="{{ $homeiphone_avif.RelPermalink }}">
         <source type="image/webp" srcset="{{ $homeiphone_webp.RelPermalink }}">
         <img src="{{ $homeiphone.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
     </picture>
-
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
-        {{ $homebrowser_avif := resources.Get "/images/helpdesk/helpdesk-browser.avif" | fingerprint }}
-        {{ $homebrowser_webp := resources.Get "/images/helpdesk/helpdesk-browser.webp" | fingerprint }}
-        {{ $homebrowser := resources.Get "/images/helpdesk/helpdesk-browser.jpg" | fingerprint }}
-        <source type="image/avif" srcset="{{ $homebrowser_avif.RelPermalink }}">
-        <source type="image/webp" srcset="{{ $homebrowser_webp.RelPermalink }}">
-        <img src="{{ $homebrowser.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
-    </picture>
-
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
-        {{ $homeipad_avif := resources.Get "/images/helpdesk/helpdesk-ipad.avif" | fingerprint }}
-        {{ $homeipad_webp := resources.Get "/images/helpdesk/helpdesk-ipad.webp" | fingerprint }}
-        {{ $homeipad := resources.Get "/images/helpdesk/helpdesk-ipad.jpg" | fingerprint }}
-        <source type="image/avif" srcset="{{ $homeipad_avif.RelPermalink }}">
-        <source type="image/webp" srcset="{{ $homeipad_webp.RelPermalink }}">
-        <img src="{{ $homeipad.RelPermalink }}" alt="Device Mockup iPad" class="object-cover w-full h-full">
-    </picture>
 </div>
-
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <div class="antialiased leading-normal my-8">
         <p class="mb-4">
-            Created using the Laravel Framework, users are presented with a simple set of forms to log issues around the estate. 
+            Created using the Laravel Framework, users are presented with a simple set of forms to log issues around the
+            estate.
         </p>
         <p class="mb-4">
-            Engineers can then view the tickets created and provide corespondance while the issue is resolved. Updates provided notify the interested parties either via email or helpdesks own notification system.
+            Engineers can then view the tickets created and provide corespondance while the issue is resolved. Updates
+            provided notify the interested parties either via email or helpdesks own notification system.
         </p>
         <p class="mb-4">
-            Additional meta data can be assigned to tickets along with assets held in the system, each ticket and asset then has full audit trail of all actions taken
+            Additional meta data can be assigned to tickets along with assets held in the system, each ticket and asset
+            then has full audit trail of all actions taken
         </p>
         <p class="mb-4">
-            Managers can view feedback from tickets as well as detailed analytics and service level agreements, data can be viewed in cusomisable graphs or exported to csv for a manager to manipulate in software of their choice.
+            Managers can view feedback from tickets as well as detailed analytics and service level agreements, data can
+            be viewed in cusomisable graphs or exported to csv for a manager to manipulate in software of their choice.
         </p>
         <p class="mb-4">
-            Tickets can be assigned automatically to engineers or helpdesks using a custom trained tensorflow model, or using round robbin, random, least busy engineer. 
+            Tickets can be assigned automatically to engineers or helpdesks using a custom trained tensorflow model, or
+            using round robbin, random, least busy engineer.
         </p>
         <p class="mb-4">
-            Assets for the College are tagged with QR codes, that can be scanned using Helpdesks built in scanner to either audit the assets, add them to a ticket or search to find out further information.
+            Assets for the College are tagged with QR codes, that can be scanned using Helpdesks built in scanner to
+            either audit the assets, add them to a ticket or search to find out further information.
         </p>
 
     </div>
@@ -103,7 +88,8 @@
                 <a href="https://github.com" target="_blank">Github</a><br />
                 <a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2</a><br />
                 <a href="https://aws.amazon.com/rds/" target="_blank">Amazon RDS</a><br />
-                <a href="https://aws.amazon.com/certificate-manager/" target="_blank">Amazon Certificate Manager</a><br />
+                <a href="https://aws.amazon.com/certificate-manager/" target="_blank">Amazon Certificate
+                    Manager</a><br />
                 <a href="https://aws.amazon.com/route53/" target="_blank">Amazon Route53</a><br />
                 <a href="https://aws.amazon.com/cloudfront/" target="_blank">Amazon Cloudfront</a><br />&nbsp;
             </div>
@@ -121,8 +107,27 @@
     </div>
 </div>
 
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $homebrowser_avif := resources.Get "/images/helpdesk/helpdesk-phone.avif" | fingerprint }}
+        {{ $homebrowser_webp := resources.Get "/images/helpdesk/helpdesk-phone.webp" | fingerprint }}
+        {{ $homebrowser := resources.Get "/images/helpdesk/helpdesk-phone.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $homebrowser_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $homebrowser_webp.RelPermalink }}">
+        <img src="{{ $homebrowser.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
+    </picture>
 
-
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $homeipad_avif := resources.Get "/images/helpdesk/helpdesk-ipad.avif" | fingerprint }}
+        {{ $homeipad_webp := resources.Get "/images/helpdesk/helpdesk-ipad.webp" | fingerprint }}
+        {{ $homeipad := resources.Get "/images/helpdesk/helpdesk-ipad.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $homeipad_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $homeipad_webp.RelPermalink }}">
+        <img src="{{ $homeipad.RelPermalink }}" alt="Device Mockup iPad" class="object-cover w-full h-full">
+    </picture>
+</div>
 
 
 {{- partial "footer.html" . -}}

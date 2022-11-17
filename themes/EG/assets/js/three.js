@@ -20,7 +20,7 @@ const parameters = {
  */
 const sizes = {
     width: window.innerWidth - 64,
-    height: window.innerHeight 
+    height: window.innerHeight - 140 
 }
 if (window.innerWidth < 1152) {
     sizes.width = window.innerWidth - 64
@@ -50,7 +50,7 @@ window.addEventListener('resize', () =>
     if (window.innerWidth < 1152) {
         sizes.width = window.innerWidth - 64 
     }
-    sizes.height = window.innerHeight
+    sizes.height = window.innerHeight - 140
     // Update camera
     camera.aspect = sizes.width / sizes.height
     camera.updateProjectionMatrix()

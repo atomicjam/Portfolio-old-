@@ -48,39 +48,21 @@
         <source type="image/webp" srcset="{{ $image2_webp.RelPermalink }}">
         <img src="{{ $image2.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
     </picture>
-
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
-        {{ $image3_avif := resources.Get "/images/delorean/Browser4.avif" | fingerprint }}
-        {{ $image3_webp := resources.Get "/images/delorean/Browser4.webp" | fingerprint }}
-        {{ $image3 := resources.Get "/images/delorean/Browser4.jpg" | fingerprint }}
-        <source type="image/avif" srcset="{{ $image3_avif.RelPermalink }}">
-        <source type="image/webp" srcset="{{ $image3_webp.RelPermalink }}">
-        <img src="{{ $image3.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
-    </picture>
-
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
-        {{ $image4_avif := resources.Get "/images/delorean/Browser3.avif" | fingerprint }}
-        {{ $image4_webp := resources.Get "/images/delorean/Browser3.webp" | fingerprint }}
-        {{ $image4 := resources.Get "/images/delorean/Browser3.jpg" | fingerprint }}
-        <source type="image/avif" srcset="{{ $image4_avif.RelPermalink }}">
-        <source type="image/webp" srcset="{{ $image4_webp.RelPermalink }}">
-        <img src="{{ $image4.RelPermalink }}" alt="Device Mockup iPad" class="object-cover w-full h-full">
-    </picture>
 </div>
-
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <div class="antialiased leading-normal my-8">
         <p class="mb-4">
-           Built using an AWS EC2 instance with large cold storage attached, crawling College domains is performed using wget with custom PHP scripts to parse the data.
+            Built using an AWS EC2 instance with large cold storage attached, crawling College domains is performed
+            using wget with custom PHP scripts to parse the data.
         </p>
         <p class="mb-4">
-            A simple front end to display the archive in frames allows the users to go back in time and look at any snapshot.
+            A simple front end to display the archive in frames allows the users to go back in time and look at any
+            snapshot.
         </p>
         <p class="mb-4">
-            An additional integration with updown.io is available for users to see availability information for the various sites around the world, key stake holders are also notified should the sites become unavailable. 
+            An additional integration with updown.io is available for users to see availability information for the
+            various sites around the world, key stake holders are also notified should the sites become unavailable.
         </p>
 
     </div>
@@ -105,6 +87,28 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $image3_avif := resources.Get "/images/delorean/Browser4.avif" | fingerprint }}
+        {{ $image3_webp := resources.Get "/images/delorean/Browser4.webp" | fingerprint }}
+        {{ $image3 := resources.Get "/images/delorean/Browser4.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $image3_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $image3_webp.RelPermalink }}">
+        <img src="{{ $image3.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $image4_avif := resources.Get "/images/delorean/Browser3.avif" | fingerprint }}
+        {{ $image4_webp := resources.Get "/images/delorean/Browser3.webp" | fingerprint }}
+        {{ $image4 := resources.Get "/images/delorean/Browser3.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $image4_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $image4_webp.RelPermalink }}">
+        <img src="{{ $image4.RelPermalink }}" alt="Device Mockup iPad" class="object-cover w-full h-full">
+    </picture>
 </div>
 
 {{- partial "footer.html" . -}}

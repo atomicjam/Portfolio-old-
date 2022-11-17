@@ -35,15 +35,7 @@
         <img src="{{ $clclogo.RelPermalink }}" alt="CLC Crest" class="object-cover w-full h-full">
     </picture>
 
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
-        {{ $clcphones_avif := resources.Get "/images/flourish/flourish-print.avif" | fingerprint }}
-        {{ $clcphones_webp := resources.Get "/images/flourish/flourish-print.webp" | fingerprint }}
-        {{ $clcphones := resources.Get "/images/flourish/flourish-print.jpg" | fingerprint }}
-        <source type="image/avif" srcset="{{ $clcphones_avif.RelPermalink }}">
-        <source type="image/webp" srcset="{{ $clcphones_webp.RelPermalink }}">
-        <img src="{{ $clcphones.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
-    </picture>
+    
 
 </div>
 
@@ -114,6 +106,16 @@
         {{ $clcphones_avif := resources.Get "/images/flourish/flourish-open.avif" | fingerprint }}
         {{ $clcphones_webp := resources.Get "/images/flourish/flourish-open.webp" | fingerprint }}
         {{ $clcphones := resources.Get "/images/flourish/flourish-open.jpg" | fingerprint }}
+        <source type="image/avif" srcset="{{ $clcphones_avif.RelPermalink }}">
+        <source type="image/webp" srcset="{{ $clcphones_webp.RelPermalink }}">
+        <img src="{{ $clcphones.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
+    </picture>
+
+    <picture class="object-cover w-full h-full opacity-25"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+        {{ $clcphones_avif := resources.Get "/images/flourish/flourish-print.avif" | fingerprint }}
+        {{ $clcphones_webp := resources.Get "/images/flourish/flourish-print.webp" | fingerprint }}
+        {{ $clcphones := resources.Get "/images/flourish/flourish-print.jpg" | fingerprint }}
         <source type="image/avif" srcset="{{ $clcphones_avif.RelPermalink }}">
         <source type="image/webp" srcset="{{ $clcphones_webp.RelPermalink }}">
         <img src="{{ $clcphones.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">

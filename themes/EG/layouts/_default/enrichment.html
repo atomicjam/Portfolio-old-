@@ -7,14 +7,12 @@
     </div>
     <div class="antialiased leading-normal">
         <p class="my-4">
-            Management of Wellbeing and Enrichment activities for the school term requires large amounts of processing to ensure each activity is staffed, located, setup and provisioned correctly
-
-            to facilitate this Enrichment alows managment of Events and Activities, flagging issues around clashes.
+            Organisation of Wellbeing & Enrichment activities for the school term requires large amounts of administration time to ensuring each activity is staffed, located, provisioned correctly to alow the events to run smoothly.
+        </p>
+        <p class="my-4">
+            Enrichment was built to streamline the process, allowing management of events and activities & automatically flagging issues around clashes, or missing resources which can then be addressed by the administrator.
         </p>
         
-        
-
-
         <div class="my-8 grid grid-cols-4 gap-0 leading-normal">
             <div class="font-semibold">Statistics</div>
             <div class="font-light text-right col-span-3">
@@ -38,19 +36,75 @@
 
     <picture class="object-cover w-full h-full opacity-25"
         x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
-        {{ $homeiphone_avif := resources.Get "/images/enrichment/browser2.avif" | fingerprint }}
-        {{ $homeiphone_webp := resources.Get "/images/enrichment/browser2.webp" | fingerprint }}
-        {{ $homeiphone := resources.Get "/images/enrichment/browser2.jpg" | fingerprint }}
+        {{ $homeiphone_avif := resources.Get "/images/enrichment/browser3.avif" | fingerprint }}
+        {{ $homeiphone_webp := resources.Get "/images/enrichment/browser3.webp" | fingerprint }}
+        {{ $homeiphone := resources.Get "/images/enrichment/browser3.jpg" | fingerprint }}
         <source type="image/avif" srcset="{{ $homeiphone_avif.RelPermalink }}">
         <source type="image/webp" srcset="{{ $homeiphone_webp.RelPermalink }}">
         <img src="{{ $homeiphone.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
     </picture>
 
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="antialiased leading-normal my-8">
+        <p class="mb-4">
+            Initial built by a member of staff using Excel, the system took the underpinning process and reimagined it using the Laravel Framework.
+        </p>
+
+        <p class="my-4">
+            This allowed Students & Staff can login and see details of the activities, making internal communication around events significantly easier.
+            Users can subscribe to have the events added to their Outlook calendar.
+        </p>
+
+        <p class="my-4">
+            Upcoming activity details are shown on the College digital displays for those who have not subscribed.
+        </p>
+
+        <p class="my-4">
+            The system generates reports for the various internal departments providing details in advance to those administrators that require access.
+        </p>
+
+        <p class="my-4">
+            Administrators are guided through adding activities to events, and the system will prompt if clashes are found, or a member of staff has been over provisioned.
+        </p>
+
+
+    </div>
+    <div>
+        <div class="my-8 grid grid-cols-2 gap-0">
+            <div class="font-semibold">Stack</div>
+            <div class="font-light">
+                <a href="https://laravel.com" target="_blank">Laravel</a><br />
+                <a href="https://github.com" target="_blank">Github</a><br />
+                <a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2</a><br />
+                <a href="https://aws.amazon.com/rds/" target="_blank">Amazon RDS</a><br />
+                <a href="https://aws.amazon.com/certificate-manager/" target="_blank">Amazon Certificate
+                    Manager</a><br />
+                <a href="https://aws.amazon.com/route53/" target="_blank">Amazon Route53</a><br />
+                <a href="https://aws.amazon.com/cloudfront/" target="_blank">Amazon Cloudfront</a><br />
+                <a href="https://aws.amazon.com/sns/" target="_blank">Amazon SNS</a><br />&nbsp;
+            </div>
+            <div class="font-semibold">Libraries & Technologies</div>
+            <div class="font-light">
+                <a href="https://tailwindcss.com" target="_blank">Tailwind.Css</a><br />
+                <a href="https://alpinejs.dev" target="_blank">Alpine.Js</a><br />&nbsp;
+            </div>
+            <div class="font-semibold">Integrations</div>
+            <div class="font-light">
+                <a href="https://ldaprecord.com" target="_blank">Ldap</a><br />&nbsp;
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
+
     <picture class="object-cover w-full h-full opacity-25"
         x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
-        {{ $homebrowser_avif := resources.Get "/images/enrichment/browser3.avif" | fingerprint }}
-        {{ $homebrowser_webp := resources.Get "/images/enrichment/browser3.webp" | fingerprint }}
-        {{ $homebrowser := resources.Get "/images/enrichment/browser3.jpg" | fingerprint }}
+        {{ $homebrowser_avif := resources.Get "/images/enrichment/browser2.avif" | fingerprint }}
+        {{ $homebrowser_webp := resources.Get "/images/enrichment/browser2.webp" | fingerprint }}
+        {{ $homebrowser := resources.Get "/images/enrichment/browser2.jpg" | fingerprint }}
         <source type="image/avif" srcset="{{ $homebrowser_avif.RelPermalink }}">
         <source type="image/webp" srcset="{{ $homebrowser_webp.RelPermalink }}">
         <img src="{{ $homebrowser.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
@@ -68,44 +122,7 @@
 </div>
 
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <div class="antialiased leading-normal my-8">
-        <p class="mb-4">
-            The system generates reports for the various internal departments providing only the relevant details to those
-            administrators that require access.
-        </p>
-        
-        <p class="my-4">
-            Students & Staff can login and see details of the activities and can subscribe to have the events added to their
-            calendar.
-        </p>
 
-    </div>
-    <div>
-        <div class="my-8 grid grid-cols-2 gap-0">
-            <div class="font-semibold">Stack</div>
-            <div class="font-light">
-                <a href="https://laravel.com" target="_blank">Laravel</a><br />
-                <a href="https://github.com" target="_blank">Github</a><br />
-                <a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2</a><br />
-                <a href="https://aws.amazon.com/rds/" target="_blank">Amazon RDS</a><br />
-                <a href="https://aws.amazon.com/certificate-manager/" target="_blank">Amazon Certificate Manager</a><br />
-                <a href="https://aws.amazon.com/route53/" target="_blank">Amazon Route53</a><br />
-                <a href="https://aws.amazon.com/cloudfront/" target="_blank">Amazon Cloudfront</a><br />
-                <a href="https://aws.amazon.com/sns/" target="_blank">Amazon SNS</a><br />&nbsp;
-            </div>
-            <div class="font-semibold">Libraries & Technologies</div>
-            <div class="font-light">
-                <a href="https://tailwindcss.com" target="_blank">Tailwind.Css</a><br />
-                <a href="https://alpinejs.dev" target="_blank">Alpine.Js</a><br />&nbsp;
-            </div>
-            <div class="font-semibold">Integrations</div>
-            <div class="font-light">
-                <a href="https://ldaprecord.com" target="_blank">Ldap</a><br />&nbsp;
-            </div>
-        </div>
-    </div>
-</div>
 
 
 
