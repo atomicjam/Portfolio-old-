@@ -25,6 +25,8 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
 
+    <div></div>
+
     <picture class="object-cover w-full h-full opacity-0"
         x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
         x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
