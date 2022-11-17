@@ -32,8 +32,9 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
 
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+    <picture class="object-cover w-full h-full opacity-0"
+        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
         {{ $homelogo_avif := resources.Get "/images/helpdesk/helpdesk-logo.avif" | fingerprint }}
         {{ $homelogo_webp := resources.Get "/images/helpdesk/helpdesk-logo.webp" | fingerprint }}
         {{ $homelogo := resources.Get "/images/helpdesk/helpdesk-logo.jpg" | fingerprint }}
@@ -42,8 +43,9 @@
         <img src="{{ $homelogo.RelPermalink }}" alt="Home Crest" class="object-cover w-full h-full">
     </picture>
 
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+    <picture class="object-cover w-full h-full opacity-0"
+        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
         {{ $homeiphone_avif := resources.Get "/images/helpdesk/helpdesk-browser.avif" | fingerprint }}
         {{ $homeiphone_webp := resources.Get "/images/helpdesk/helpdesk-browser.webp" | fingerprint }}
         {{ $homeiphone := resources.Get "/images/helpdesk/helpdesk-browser.jpg" | fingerprint }}
@@ -108,8 +110,9 @@
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+    <picture class="object-cover w-full h-full opacity-0"
+        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
         {{ $homebrowser_avif := resources.Get "/images/helpdesk/helpdesk-phone.avif" | fingerprint }}
         {{ $homebrowser_webp := resources.Get "/images/helpdesk/helpdesk-phone.webp" | fingerprint }}
         {{ $homebrowser := resources.Get "/images/helpdesk/helpdesk-phone.jpg" | fingerprint }}
@@ -118,8 +121,9 @@
         <img src="{{ $homebrowser.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
     </picture>
 
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+    <picture class="object-cover w-full h-full opacity-0"
+        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
         {{ $homeipad_avif := resources.Get "/images/helpdesk/helpdesk-ipad.avif" | fingerprint }}
         {{ $homeipad_webp := resources.Get "/images/helpdesk/helpdesk-ipad.webp" | fingerprint }}
         {{ $homeipad := resources.Get "/images/helpdesk/helpdesk-ipad.jpg" | fingerprint }}

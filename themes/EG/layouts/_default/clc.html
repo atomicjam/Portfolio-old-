@@ -35,8 +35,10 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
 
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+    <picture class="object-cover w-full h-full opacity-0"
+        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');"
+        >
         {{ $clclogo_avif := resources.Get "/images/clc/clc-logo.avif" | fingerprint }}
         {{ $clclogo_webp := resources.Get "/images/clc/clc-logo.webp" | fingerprint }}
         {{ $clclogo := resources.Get "/images/clc/clc-logo.jpg" | fingerprint }}
@@ -45,8 +47,10 @@
         <img src="{{ $clclogo.RelPermalink }}" alt="CLC Crest" class="object-cover w-full h-full">
     </picture>
 
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+    <picture class="object-cover w-full h-full opacity-0"
+        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');"
+        >
         {{ $clcphones_avif := resources.Get "/images/clc/clc-phones.avif" | fingerprint }}
         {{ $clcphones_webp := resources.Get "/images/clc/clc-phones.webp" | fingerprint }}
         {{ $clcphones := resources.Get "/images/clc/clc-phones.jpg" | fingerprint }}
@@ -106,8 +110,10 @@
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+    <picture class="object-cover w-full h-full opacity-0"
+        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');"
+        >
         {{ $clcbrowser_avif := resources.Get "/images/clc/clc-browser.avif" | fingerprint }}
         {{ $clcbrowser_webp := resources.Get "/images/clc/clc-browser.webp" | fingerprint }}
         {{ $clcbrowser := resources.Get "/images/clc/clc-browser.jpg" | fingerprint }}
@@ -116,8 +122,10 @@
         <img src="{{ $clcbrowser.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
     </picture>
 
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+    <picture class="object-cover w-full h-full opacity-0"
+        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');"
+        >
         {{ $clcipad_avif := resources.Get "/images/clc/clc-ipad.avif" | fingerprint }}
         {{ $clcipad_webp := resources.Get "/images/clc/clc-ipad.webp" | fingerprint }}
         {{ $clcipad := resources.Get "/images/clc/clc-ipad.jpg" | fingerprint }}
@@ -126,8 +134,10 @@
         <img src="{{ $clcipad.RelPermalink }}" alt="Device Mockup iPad" class="object-cover w-full h-full">
     </picture>
 
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+    <picture class="object-cover w-full h-full opacity-0"
+        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');"
+        >
         {{ $clcbrowser_avif := resources.Get "/images/clc/clc-logodevelopment.avif" | fingerprint }}
         {{ $clcbrowser_webp := resources.Get "/images/clc/clc-logodevelopment.webp" | fingerprint }}
         {{ $clcbrowser := resources.Get "/images/clc/clc-logodevelopment.jpg" | fingerprint }}
@@ -136,8 +146,10 @@
         <img src="{{ $clcbrowser.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
     </picture>
 
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+    <picture class="object-cover w-full h-full opacity-0"
+        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');"
+        >
         {{ $clcbrowser_avif := resources.Get "/images/clc/prospectus.avif" | fingerprint }}
         {{ $clcbrowser_webp := resources.Get "/images/clc/prospectus.webp" | fingerprint }}
         {{ $clcbrowser := resources.Get "/images/clc/prospectus.jpg" | fingerprint }}
