@@ -7,12 +7,15 @@
     </div>
     <div class="antialiased leading-normal">
         <p class="my-4">
-            todo
+            Co-Brand microsite for The Cheltenham Ladies' College Guild allowing members to see what is happening in the Guild community.
+        </p>
+        
+        <p class="my-4">
+            The site allowed visitors to log into a private portal integration using Blackbaud integration with facilities such as forums.
         </p>
         <div class="my-8 grid grid-cols-4 gap-0 leading-normal">
             <div class="font-semibold">Statistics</div>
             <div class="font-light text-right col-span-3">
-                todo <br />
                 A+ <a href="https://observatory.mozilla.org/" target="_blank">observatory.mozilla.org</a><br />
                 100/100/100/100 <a href="https://web.dev/measure/" target="_blank">PageSpeed Insights</a><br />
             </div>
@@ -25,9 +28,9 @@
     <picture class="object-cover w-full h-full opacity-0"
         x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
         x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
-        {{ $clclogo_avif := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clclogo_webp := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clclogo := resources.Get "/images/placeholder.png" | fingerprint }}
+        {{ $clclogo_avif := resources.Get "/images/guild/guild-logo.avif" | fingerprint }}
+        {{ $clclogo_webp := resources.Get "/images/guild/guild-logo.webp" | fingerprint }}
+        {{ $clclogo := resources.Get "/images/guild/guild-logo.jpg" | fingerprint }}
         <source type="image/avif" srcset="{{ $clclogo_avif.RelPermalink }}">
         <source type="image/webp" srcset="{{ $clclogo_webp.RelPermalink }}">
         <img src="{{ $clclogo.RelPermalink }}" alt="CLC Crest" class="object-cover w-full h-full">
@@ -36,41 +39,41 @@
     <picture class="object-cover w-full h-full opacity-0"
         x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
         x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
-        {{ $clcphones_avif := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clcphones_webp := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clcphones := resources.Get "/images/placeholder.png" | fingerprint }}
+        {{ $clcphones_avif := resources.Get "/images/guild/guild-browser.avif" | fingerprint }}
+        {{ $clcphones_webp := resources.Get "/images/guild/guild-browser.webp" | fingerprint }}
+        {{ $clcphones := resources.Get "/images/guild/guild-browser.jpg" | fingerprint }}
         <source type="image/avif" srcset="{{ $clcphones_avif.RelPermalink }}">
         <source type="image/webp" srcset="{{ $clcphones_webp.RelPermalink }}">
         <img src="{{ $clcphones.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
     </picture>
 
-    <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
-        {{ $clcbrowser_avif := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clcbrowser_webp := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clcbrowser := resources.Get "/images/placeholder.png" | fingerprint }}
-        <source type="image/avif" srcset="{{ $clcbrowser_avif.RelPermalink }}">
-        <source type="image/webp" srcset="{{ $clcbrowser_webp.RelPermalink }}">
-        <img src="{{ $clcbrowser.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
-    </picture>
-
-    <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
-        {{ $clcipad_avif := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clcipad_webp := resources.Get "/images/placeholder.png" | fingerprint }}
-        {{ $clcipad := resources.Get "/images/placeholder.png" | fingerprint }}
-        <source type="image/avif" srcset="{{ $clcipad_avif.RelPermalink }}">
-        <source type="image/webp" srcset="{{ $clcipad_webp.RelPermalink }}">
-        <img src="{{ $clcipad.RelPermalink }}" alt="Device Mockup iPad" class="object-cover w-full h-full">
-    </picture>
 </div>
 
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <div class="antialiased leading-normal my-8">
-        <p class="mb-4">todo</p>
+        <p class="mb-4">
+            Created as a traditional LAMP stack project, the site is built on a foundation of <a href="http://silverstripe.org/"
+                target="_blank">Silverstripe CMS</a> with custom page templates.
+        </p>
+        <p class="my-4">
+            Custom page templates allow the Guild team the ability to create content with no technical
+            experience. Design elements are individual, reusable components that use standard HTML, CSS & Javascript and
+            used across multiple co-brands for consistency.
+        </p>
+        <p class="my-4">
+            Integrations for Blackbaud allowed the Guild community to create an account and share information with the wider community.
+        </p>
+        <p class="my-4">
+            Initially locally hosted at the College, the project was migrated to AWS for improved resilience and scale.
+            AWS additions included edge caching to improve the experience for overseas users with AWS Cloudfront,
+            alongside security enhancements from AWS Shield.
+        </p>
+        <p class="my-4">
+            Progressive enhancements to the site have been added over the life of the project improving accessability
+            support, service workers as well as new functionality to enhance user engagement with the addition of
+            pop-out notices.
+        </p>
     </div>
     <div>
         <div class="my-8 grid grid-cols-2 gap-0">
@@ -89,9 +92,7 @@
                 Custom Javascript<br />&nbsp;</div>
             <div class="font-semibold">Integrations</div>
             <div class="font-light">
-                <a href="https://flockler.com" target="_blank">Flockler</a><br />
-                <a href="https://hireroad.com/" target="_blank">Vacancy Filler (Hireroad)</a><br />
-                <a href="https://www.isams.com" target="_blank">iSams</a><br />&nbsp;
+                <a href="https://www.blackbaud.com/" target="_blank">Blackbaud</a><br />&nbsp;
             </div>
             <div class="font-semibold">Credits</div>
             <div class="font-light">Dave Stokes Photography</div>
