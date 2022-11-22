@@ -31,8 +31,8 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $homelogo_avif := resources.Get "/images/home/home-logo.avif" | fingerprint }}
         {{ $homelogo_webp := resources.Get "/images/home/home-logo.webp" | fingerprint }}
         {{ $homelogo := resources.Get "/images/home/home-logo.jpg" | fingerprint }}
@@ -42,8 +42,8 @@
     </picture>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $homeiphone_avif := resources.Get "/images/home/home-iphone.avif" | fingerprint }}
         {{ $homeiphone_webp := resources.Get "/images/home/home-iphone.webp" | fingerprint }}
         {{ $homeiphone := resources.Get "/images/home/home-iphone.jpg" | fingerprint }}
@@ -53,8 +53,8 @@
     </picture>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $homebrowser_avif := resources.Get "/images/home/home-browser.avif" | fingerprint }}
         {{ $homebrowser_webp := resources.Get "/images/home/home-browser.webp" | fingerprint }}
         {{ $homebrowser := resources.Get "/images/home/home-browser.jpg" | fingerprint }}
@@ -64,8 +64,8 @@
     </picture>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $homeipad_avif := resources.Get "/images/home/home-ipad.avif" | fingerprint }}
         {{ $homeipad_webp := resources.Get "/images/home/home-ipad.webp" | fingerprint }}
         {{ $homeipad := resources.Get "/images/home/home-ipad.jpg" | fingerprint }}
@@ -130,8 +130,8 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $snowbrowser_avif := resources.Get "/images/home/snow-logo.avif" | fingerprint }}
         {{ $snowbrowser_webp := resources.Get "/images/home/snow-logo.webp" | fingerprint }}
         {{ $snowbrowser := resources.Get "/images/home/snow-logo.jpg" | fingerprint }}
@@ -141,8 +141,8 @@
     </picture>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $snowipad_avif := resources.Get "/images/home/snow-ipad.avif" | fingerprint }}
         {{ $snowipad_webp := resources.Get "/images/home/snow-ipad.webp" | fingerprint }}
         {{ $snowipad := resources.Get "/images/home/snow-ipad.jpg" | fingerprint }}

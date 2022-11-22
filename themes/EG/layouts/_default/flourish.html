@@ -28,8 +28,8 @@
     <div></div>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $clclogo_avif := resources.Get "/images/flourish/flourish-logo.avif" | fingerprint }}
         {{ $clclogo_webp := resources.Get "/images/flourish/flourish-logo.webp" | fingerprint }}
         {{ $clclogo := resources.Get "/images/flourish/flourish-logo.jpg" | fingerprint }}
@@ -105,8 +105,8 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $clcphones_avif := resources.Get "/images/flourish/flourish-open.avif" | fingerprint }}
         {{ $clcphones_webp := resources.Get "/images/flourish/flourish-open.webp" | fingerprint }}
         {{ $clcphones := resources.Get "/images/flourish/flourish-open.jpg" | fingerprint }}
@@ -116,8 +116,8 @@
     </picture>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $clcphones_avif := resources.Get "/images/flourish/flourish-print.avif" | fingerprint }}
         {{ $clcphones_webp := resources.Get "/images/flourish/flourish-print.webp" | fingerprint }}
         {{ $clcphones := resources.Get "/images/flourish/flourish-print.jpg" | fingerprint }}

@@ -26,8 +26,8 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $clclogo_avif := resources.Get "/images/guild/guild-logo.avif" | fingerprint }}
         {{ $clclogo_webp := resources.Get "/images/guild/guild-logo.webp" | fingerprint }}
         {{ $clclogo := resources.Get "/images/guild/guild-logo.jpg" | fingerprint }}
@@ -37,8 +37,8 @@
     </picture>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $clcphones_avif := resources.Get "/images/guild/guild-browser.avif" | fingerprint }}
         {{ $clcphones_webp := resources.Get "/images/guild/guild-browser.webp" | fingerprint }}
         {{ $clcphones := resources.Get "/images/guild/guild-browser.jpg" | fingerprint }}

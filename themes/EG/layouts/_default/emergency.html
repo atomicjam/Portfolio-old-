@@ -26,8 +26,8 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $clclogo_avif := resources.Get "/images/emergency/emergency-browser.avif" | fingerprint }}
         {{ $clclogo_webp := resources.Get "/images/emergency/emergency-browser.webp" | fingerprint }}
         {{ $clclogo := resources.Get "/images/emergency/emergency-browser.jpg" | fingerprint }}

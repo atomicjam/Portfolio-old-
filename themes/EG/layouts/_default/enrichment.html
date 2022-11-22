@@ -25,8 +25,8 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $homelogo_avif := resources.Get "/images/enrichment/browser1.avif" | fingerprint }}
         {{ $homelogo_webp := resources.Get "/images/enrichment/browser1.webp" | fingerprint }}
         {{ $homelogo := resources.Get "/images/enrichment/browser1.jpg" | fingerprint }}
@@ -36,8 +36,8 @@
     </picture>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $homeiphone_avif := resources.Get "/images/enrichment/browser3.avif" | fingerprint }}
         {{ $homeiphone_webp := resources.Get "/images/enrichment/browser3.webp" | fingerprint }}
         {{ $homeiphone := resources.Get "/images/enrichment/browser3.jpg" | fingerprint }}
@@ -103,8 +103,8 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $homebrowser_avif := resources.Get "/images/enrichment/browser2.avif" | fingerprint }}
         {{ $homebrowser_webp := resources.Get "/images/enrichment/browser2.webp" | fingerprint }}
         {{ $homebrowser := resources.Get "/images/enrichment/browser2.jpg" | fingerprint }}
@@ -114,8 +114,8 @@
     </picture>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $homeipad_avif := resources.Get "/images/enrichment/browser4.avif" | fingerprint }}
         {{ $homeipad_webp := resources.Get "/images/enrichment/browser4.webp" | fingerprint }}
         {{ $homeipad := resources.Get "/images/enrichment/browser4.jpg" | fingerprint }}

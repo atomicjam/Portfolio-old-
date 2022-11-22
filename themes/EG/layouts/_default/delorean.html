@@ -30,8 +30,8 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $image1_avif := resources.Get "/images/delorean/Browser1.avif" | fingerprint }}
         {{ $image1_webp := resources.Get "/images/delorean/Browser1.webp" | fingerprint }}
         {{ $image1 := resources.Get "/images/delorean/Browser1.jpg" | fingerprint }}
@@ -41,8 +41,8 @@
     </picture>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $image2_avif := resources.Get "/images/delorean/Browser2.avif" | fingerprint }}
         {{ $image2_webp := resources.Get "/images/delorean/Browser2.webp" | fingerprint }}
         {{ $image2 := resources.Get "/images/delorean/Browser2.jpg" | fingerprint }}
@@ -93,8 +93,8 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $image3_avif := resources.Get "/images/delorean/Browser4.avif" | fingerprint }}
         {{ $image3_webp := resources.Get "/images/delorean/Browser4.webp" | fingerprint }}
         {{ $image3 := resources.Get "/images/delorean/Browser4.jpg" | fingerprint }}
@@ -104,8 +104,8 @@
     </picture>
 
     <picture class="object-cover w-full h-full opacity-0"
-        x-intersect.half="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
-        x-intersect:leave="$el.classList.remove('PopIn'); $el.classList.add('opacity-0');">
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
+        >
         {{ $image4_avif := resources.Get "/images/delorean/Browser3.avif" | fingerprint }}
         {{ $image4_webp := resources.Get "/images/delorean/Browser3.webp" | fingerprint }}
         {{ $image4 := resources.Get "/images/delorean/Browser3.jpg" | fingerprint }}
