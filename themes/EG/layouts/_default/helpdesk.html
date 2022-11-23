@@ -32,7 +32,7 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
 
-    <picture class="object-cover w-full h-full opacity-0"
+    <picture class="object-cover w-full h-full opacity-0 dark:brightness-75"
         x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
         >
         {{ $homelogo_avif := resources.Get "/images/helpdesk/helpdesk-logo.avif" | fingerprint }}
@@ -43,7 +43,7 @@
         <img src="{{ $homelogo.RelPermalink }}" alt="Home Crest" class="object-cover w-full h-full">
     </picture>
 
-    <picture class="object-cover w-full h-full opacity-0"
+    <picture class="object-cover w-full h-full opacity-0 dark:brightness-75"
         x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
         >
         {{ $homeiphone_avif := resources.Get "/images/helpdesk/helpdesk-browser.avif" | fingerprint }}
@@ -110,7 +110,7 @@
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
-    <picture class="object-cover w-full h-full opacity-0"
+    <picture class="object-cover w-full h-full opacity-0 dark:brightness-75"
         x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
         >
         {{ $homebrowser_avif := resources.Get "/images/helpdesk/helpdesk-phone.avif" | fingerprint }}
@@ -121,7 +121,7 @@
         <img src="{{ $homebrowser.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
     </picture>
 
-    <picture class="object-cover w-full h-full opacity-0"
+    <picture class="object-cover w-full h-full opacity-0 dark:brightness-75"
         x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
         >
         {{ $homeipad_avif := resources.Get "/images/helpdesk/helpdesk-ipad.avif" | fingerprint }}

@@ -27,7 +27,7 @@
 
     <div></div>
 
-    <picture class="object-cover w-full h-full opacity-0"
+    <picture class="object-cover w-full h-full opacity-0 dark:brightness-75"
         x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
         >
         {{ $clclogo_avif := resources.Get "/images/flourish/flourish-logo.avif" | fingerprint }}
@@ -104,7 +104,7 @@
 
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
-    <picture class="object-cover w-full h-full opacity-0"
+    <picture class="object-cover w-full h-full opacity-0 dark:brightness-75"
         x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
         >
         {{ $clcphones_avif := resources.Get "/images/flourish/flourish-open.avif" | fingerprint }}
@@ -115,7 +115,7 @@
         <img src="{{ $clcphones.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
     </picture>
 
-    <picture class="object-cover w-full h-full opacity-0"
+    <picture class="object-cover w-full h-full opacity-0 dark:brightness-75"
         x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
         >
         {{ $clcphones_avif := resources.Get "/images/flourish/flourish-print.avif" | fingerprint }}

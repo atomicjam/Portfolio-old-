@@ -384,8 +384,8 @@
 </div>
 
 {{ $jameswebb := resources.Get "/images/experiments/jameswebb.jpg" | fingerprint }}
-<div class="relative w-full h-96 md:h-screen overflow-clip">
-    <div class="antialiased leading-none mix-blend-screen text-4xl md:text-5xl lg:text-6xl font-black absolute top-0 left-0 z-10 bg-white text-black h-full w-full text-center px-8 pt-8">Life is like a finger pointing away to the moon. Do not concentrate on the finger or you will miss all of the heavenly glory!</div>
+<div class="relative w-full h-96 md:h-auto overflow-clip">
+    <div class="antialiased leading-none mix-blend-screen text-4xl md:text-5xl lg:text-6xl font-black absolute top-0 left-0 z-10 bg-white dark:bg-black text-black dark:text-white h-full w-full text-center px-8 pt-8">Life is like a finger pointing away to the moon. Do not concentrate on the finger or you will miss all of the heavenly glory!</div>
     <img src="{{ $jameswebb.RelPermalink }}" class="relative -top-8 left-0 h-auto w-auto bg-cover">
 </div>
 

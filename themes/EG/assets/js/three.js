@@ -6,9 +6,11 @@ import * as dat from 'lil-gui'
 /**
  * Parameters
  */
+
+
 const parameters = {
     color: 0x0891b2,
-    bgcolor: 0xffffff,
+    bgcolor: 0x000000,
     spin: () =>
     {
         gsap.to(mesh.rotation, { duration: 1, y: mesh.rotation.y + Math.PI * 2 })
@@ -33,7 +35,7 @@ const canvas = document.querySelector('canvas#webgl')
 // Scene
 const scene = new THREE.Scene()
 scene.background = new THREE.Color(parameters.bgcolor)
-
+scene.background = null
 
 /**
  * Object
@@ -105,7 +107,8 @@ controls.enableDamping = true
  * Renderer
  */
 const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
+    canvas: canvas,
+    alpha: true
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
