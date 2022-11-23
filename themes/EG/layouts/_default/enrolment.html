@@ -27,8 +27,8 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-data>
 
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+    <picture class="object-cover w-full h-full opacity-0 dark:brightness-75"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');">
         {{ $image1_avif := resources.Get "/images/enrolment/iPhone.avif" | fingerprint }}
         {{ $image1_webp := resources.Get "/images/enrolment/iPhone.webp" | fingerprint }}
         {{ $image1 := resources.Get "/images/enrolment/iPhone.jpg" | fingerprint }}
@@ -37,8 +37,8 @@
         <img src="{{ $image1.RelPermalink }}" alt="Home Crest" class="object-cover w-full h-full">
     </picture>
 
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+    <picture class="object-cover w-full h-full opacity-0 dark:brightness-75"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');">
         {{ $image2_avif := resources.Get "/images/enrolment/Browser.avif" | fingerprint }}
         {{ $image2_webp := resources.Get "/images/enrolment/Browser.webp" | fingerprint }}
         {{ $image2 := resources.Get "/images/enrolment/Browser.jpg" | fingerprint }}
@@ -47,8 +47,8 @@
         <img src="{{ $image2.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
     </picture>
 
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+    <picture class="object-cover w-full h-full opacity-0 dark:brightness-75"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');">
         {{ $image3_avif := resources.Get "/images/enrolment/iPad.avif" | fingerprint }}
         {{ $image3_webp := resources.Get "/images/enrolment/iPad.webp" | fingerprint }}
         {{ $image3 := resources.Get "/images/enrolment/iPad.jpg" | fingerprint }}
@@ -57,8 +57,8 @@
         <img src="{{ $image3.RelPermalink }}" alt="Device Mockup Browser" class="object-cover w-full h-full">
     </picture>
 
-    <picture class="object-cover w-full h-full opacity-25"
-        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-25');">
+    <picture class="object-cover w-full h-full opacity-0 dark:brightness-75"
+        x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');">
         {{ $image4_avif := resources.Get "/images/enrolment/iPhone2.avif" | fingerprint }}
         {{ $image4_webp := resources.Get "/images/enrolment/iPhone2.webp" | fingerprint }}
         {{ $image4 := resources.Get "/images/enrolment/iPhone2.jpg" | fingerprint }}
