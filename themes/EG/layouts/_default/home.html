@@ -143,9 +143,9 @@
     <picture class="object-cover w-full h-full opacity-0 dark:brightness-75"
         x-intersect.once="$el.classList.add('PopIn'); $el.classList.remove('opacity-0');"
         >
-        {{ $snowipad_avif := resources.Get "/images/home/snow-ipad.avif" | fingerprint }}
-        {{ $snowipad_webp := resources.Get "/images/home/snow-ipad.webp" | fingerprint }}
-        {{ $snowipad := resources.Get "/images/home/snow-ipad.jpg" | fingerprint }}
+        {{ $snowipad_avif := resources.Get "/images/home/snow-browser.avif" | fingerprint }}
+        {{ $snowipad_webp := resources.Get "/images/home/snow-browser.webp" | fingerprint }}
+        {{ $snowipad := resources.Get "/images/home/snow-browser.jpg" | fingerprint }}
         <source type="image/avif" srcset="{{ $snowipad_avif.RelPermalink }}">
         <source type="image/webp" srcset="{{ $snowipad_webp.RelPermalink }}">
         <img src="{{ $snowipad.RelPermalink }}" alt="Device Mockup Phones" class="object-cover w-full h-full">
