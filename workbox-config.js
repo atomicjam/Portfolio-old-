@@ -11,5 +11,5 @@ module.exports = {
 	cleanupOutdatedCaches: true,
 	skipWaiting: true,
 	clientsClaim: true,
-	cacheId: 'eg-service-worker-03',
+	cacheId: 'eg-service-worker-04',
 };

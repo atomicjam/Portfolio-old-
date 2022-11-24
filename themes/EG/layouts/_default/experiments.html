@@ -430,5 +430,146 @@
 
 
 
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+    <div>
+        <h1 class="mt-4 mb-1 text-4xl font-bold">CSS Card Stack Challenges</h1>
+        
+            <form class="mt-4 text-sm antialiased text-gray-600 dark:text-white font-light my-4">
+                <fieldset class="my-4">
+                    <legend>Transform Origin</legend>
+                    <input type="radio" id="mode-center" name="stack-type" checked>
+                    <label for="mode-center">center</label>
+                    <input type="radio" id="mode-bottom-center" name="stack-type">
+                    <label for="mode-bottom-center">bottom center</label>
+                    <input type="radio" id="mode-bottom-left" name="stack-type">
+                    <label for="mode-bottom-left">bottom left</label>
+                    <input type="radio" id="mode-top-left" name="stack-type">
+                    <label for="mode-top-left">top left</label>
+                    <input type="radio" id="mode-top-right" name="stack-type">
+                    <label for="mode-top-right">top right</label>
+                    <input type="radio" id="mode-bottom-right" name="stack-type">
+                    <label for="mode-bottom-right">bottom right</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Gap</legend>
+                    <input id="slider" type="range" min="0" max="20" value="5">
+                </fieldset>
+            </form>
+        
+    </div>
+</div>
+
+<section id="cardchallenges" class="h-[500px]">
+
+<style>
+
+#cardchallenges {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    padding: 0;
+    gap: 50px;
+    overflow: hidden;
+  }
+  
+  .card {
+    aspect-ratio: 16/9;
+    background: black;
+    border-radius: 10px;
+    box-shadow: 5px 2px 2px rgba(20, 20, 20, 0.287);
+  }
+  
+  .card:nth-of-type(5) { background: #bae6fd }
+  .card:nth-of-type(4) { background: #7dd3fc }
+  .card:nth-of-type(3) { background: #38bdf8 }
+  .card:nth-of-type(2) { background: #0ea5e9 }
+  .card:nth-of-type(1) { background: #0284c7 }
+
+  .card-stack {
+  justify-self: start;
+  display: grid;
+  grid: [gui] 1fr / [challenges] min(50vmin, 40ch);
+}
+
+.card {
+  --better-bottom-left: -25% 125%;
+  --better-bottom-center: center 200%;
+  --better-bottom-right: 125% 125%;
+  --better-top-left: -25% -25%;
+  --better-top-center: center -200%;
+  --better-top-right: 125% -25%;
+
+  grid-area: gui / challenges;
+  transform: rotate(var(--r, 0deg)) translateY(var(--t, 0px));
+  transition: 
+    transform-origin .5s ease-in-out,
+    transform .25s ease-in-out;
+}
+
+.card:hover {
+  /* translate: 0 -50px; */
+  --t: -50px;
+}
+
+.card:nth-of-type(5) { --r: 0deg }
+.card:nth-of-type(4) { --r: calc(var(--scalar, 5) * 1deg) }
+.card:nth-of-type(3) { --r: calc(var(--scalar, 5) * 1deg * -1) }
+.card:nth-of-type(2) { --r: calc(var(--scalar, 5) * 2 * 1deg) }
+.card:nth-of-type(1) { --r: calc(var(--scalar, 5) * 2 * 1deg * -1) }
+
+/*  radio states  */
+html:has(#mode-bottom-left:checked) .card-stack > .card {
+  transform-origin: bottom left;
+}
+
+html:has(#mode-top-left:checked) .card-stack > .card {
+  transform-origin: top left;
+}
+
+html:has(#mode-top-right:checked) .card-stack > .card {
+  transform-origin: top right;
+}
+
+html:has(#mode-bottom-right:checked) .card-stack > .card {
+  transform-origin: bottom right;
+}
+
+html:has(#mode-bottom-center:checked) .card-stack > .card {
+  transform-origin: bottom center;
+}
+
+html:has(#mode-center:checked) .card-stack > .card {
+  transform-origin: center;
+}
+
+</style>
+
+
+    <div>
+
+    </div>
+    
+    <div class="card-stack">
+        <div class="card cursor-pointer"></div>
+        <div class="card cursor-pointer"></div>
+        <div class="card cursor-pointer"></div>
+        <div class="card cursor-pointer"></div>
+        <div class="card cursor-pointer"></div>
+    </div>
+
+<script>
+    let stack = document.querySelector('.card-stack')
+
+        window.slider.oninput = e => {
+            stack.style.setProperty('--scalar', e.target.value)
+        }
+</script>
+
+</section>
+
+
+
+
 {{- partial "footer.html" . -}}
 {{ end }}
