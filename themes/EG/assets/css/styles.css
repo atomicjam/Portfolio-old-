@@ -12,7 +12,7 @@
     @keyframes PopIn {
         0% {
             opacity: 0;
-            transform: scale(0.9);
+            transform: scale(0.925);
         }
         100% {
             opacity: 1;
@@ -20,6 +20,6 @@
         }
     }
     .PopIn {
-        animation: PopIn 1s ease-in;
+        animation: PopIn 0.6s ease-in;
     }
 }
